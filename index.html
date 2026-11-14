@@ -1,0 +1,2680 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>최지은 PM 포트폴리오</title>
+<style>
+  :root{color-scheme:light dark}
+  body{margin:0;font:14px system-ui,sans-serif}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   공정표 용지 — 최지은 PM 포트폴리오
+   ============================================================ */
+
+
+:root{
+  --paper:#DBE1EC;
+  --sheet:#FBFCFE;
+  --sheet-2:#EDF1F7;
+  --ink:#101A33;
+  --ink-2:#36425E;
+  --muted:#6C7791;
+  --faint:#98A2B8;
+  --rule:#BFC8DA;
+  --rule-2:#DCE2EC;
+  --grid:#C6CEDE;
+  --grid-wk:#ACB8D0;
+  --red:#A32B22;
+  --red-soft:#A32B2214;
+  --cell:26px;
+  --wk:104px;
+  --lift:0 1px 0 rgba(16,26,51,.05), 0 18px 40px -28px rgba(16,26,51,.4);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#080C16;
+    --sheet:#0E1424;
+    --sheet-2:#151D30;
+    --ink:#DFE5F0;
+    --ink-2:#A5AFC5;
+    --muted:#78829A;
+    --faint:#5D6780;
+    --rule:#263047;
+    --rule-2:#1A2234;
+    --grid:#141B2B;
+    --grid-wk:#1D2739;
+    --red:#E8776B;
+    --red-soft:#E8776B1c;
+    --lift:0 1px 0 rgba(0,0,0,.5), 0 20px 44px -30px rgba(0,0,0,.95);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#080C16;
+  --sheet:#0E1424;
+  --sheet-2:#151D30;
+  --ink:#DFE5F0;
+  --ink-2:#A5AFC5;
+  --muted:#78829A;
+  --faint:#5D6780;
+  --rule:#263047;
+  --rule-2:#1A2234;
+  --grid:#141B2B;
+  --grid-wk:#1D2739;
+  --red:#E8776B;
+  --red-soft:#E8776B1c;
+  --lift:0 1px 0 rgba(0,0,0,.5), 0 20px 44px -30px rgba(0,0,0,.95);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
+  font-size:15.5px;
+  font-weight:400;
+  line-height:1.8;
+  word-break:keep-all;
+  overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased;
+  background-color:var(--paper);
+  background-image:
+    repeating-linear-gradient(to right, var(--grid) 0 1px, transparent 1px var(--cell)),
+    repeating-linear-gradient(to bottom, var(--grid) 0 1px, transparent 1px var(--cell)),
+    repeating-linear-gradient(to right, var(--grid-wk) 0 1px, transparent 1px var(--wk));
+  background-position:0 0;
+}
+p{margin:0}
+h1,h2,h3,h4{margin:0;font-weight:400;text-wrap:balance}
+.serif{font-family:"Noto Sans KR","Apple SD Gothic Neo",sans-serif}
+.mono{font-family:"Inter","Noto Sans KR",sans-serif,Menlo,monospace}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+b,strong{font-weight:700}
+
+/* ---------- shell ---------- */
+.wrap{max-width:1220px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:1fr;gap:0}
+@media (min-width:1040px){
+  .wrap{grid-template-columns:150px minmax(0,1fr);gap:34px;padding:0 32px}
+}
+
+/* ---------- time axis ---------- */
+.axis{display:none}
+@media (min-width:1040px){
+  .axis{
+    display:block;position:sticky;top:0;height:100vh;align-self:start;
+    padding:64px 0 48px;
+  }
+}
+.axis-inner{position:relative;height:100%;padding-left:13px}
+.axis-inner::before{
+  content:"";position:absolute;left:0;top:4px;bottom:4px;width:1px;background:var(--rule);
+}
+.axis-cap{
+  position:absolute;left:-2px;top:-26px;font-family:"Inter","Noto Sans KR",sans-serif;
+  font-size:9.5px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase;
+}
+.ax{
+  display:block;position:relative;padding:0 0 0 4px;margin-bottom:1px;
+  color:var(--muted);cursor:pointer;
+}
+.ax::before{
+  content:"";position:absolute;left:-13px;top:9px;width:7px;height:1px;background:var(--rule);
+  transition:width .2s ease,background .2s ease;
+}
+.ax .t{display:block;font-size:12.5px;line-height:1.35;transition:color .2s ease}
+.ax .d{
+  display:block;font-family:"Inter","Noto Sans KR",sans-serif;font-size:9px;letter-spacing:.06em;
+  color:var(--faint);margin-bottom:9px;
+}
+.ax:hover .t{color:var(--ink-2)}
+.ax.on::before{width:11px;background:var(--red);left:-13px}
+.ax.on .t{color:var(--ink);font-weight:600}
+.ax.on .d{color:var(--red)}
+.axis-foot{
+  position:absolute;left:4px;bottom:0;font-size:10.5px;line-height:1.6;color:var(--faint);
+  border-top:1px solid var(--rule-2);padding-top:10px;width:calc(100% - 4px);
+}
+
+/* ---------- sheet ---------- */
+main{min-width:0;padding:0 0 88px}
+.sheet{
+  background:var(--sheet);
+  border:1px solid var(--rule);
+  box-shadow:var(--lift);
+  padding:0;
+  margin:22px 0 0;
+}
+@media (min-width:1040px){ .sheet{margin:34px 0 0} }
+
+section{padding:52px 22px;border-top:1px solid var(--rule-2)}
+@media (min-width:760px){ section{padding:64px 54px} }
+section:first-child{border-top:0}
+
+/* section head — 지시서 헤더 */
+.shead{
+  display:grid;grid-template-columns:1fr;gap:6px;
+  padding-bottom:14px;margin-bottom:26px;border-bottom:1px solid var(--ink);
+}
+@media (min-width:700px){
+  .shead{grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px}
+}
+.sno{
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;letter-spacing:.18em;
+  color:var(--red);text-transform:uppercase;display:block;margin-bottom:5px;
+}
+.shead h2{
+  font-family:"Noto Sans KR",sans-serif;font-weight:700;
+  font-size:clamp(21px,2.9vw,29px);line-height:1.38;letter-spacing:-.01em;
+}
+.stamp{
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;letter-spacing:.08em;
+  color:var(--red);border:1px solid var(--red);padding:3px 7px;white-space:nowrap;
+  display:inline-block;margin:0 0 2px 4px;
+}
+.stamps{display:flex;flex-wrap:wrap;gap:0;justify-content:flex-start;align-items:center}
+@media (min-width:700px){ .stamps{justify-content:flex-end} }
+
+.lede{
+  font-family:"Noto Sans KR",sans-serif;font-size:16.5px;line-height:1.85;
+  color:var(--ink-2);max-width:56ch;margin-bottom:8px;
+}
+.body{color:var(--ink-2);font-size:14.5px;max-width:62ch}
+.stack{display:flex;flex-direction:column;gap:30px}
+
+/* hanging label rows — 지시서 본체 */
+.rows{display:flex;flex-direction:column}
+.row{
+  display:grid;grid-template-columns:1fr;gap:4px;
+  padding:17px 0;border-bottom:1px solid var(--rule-2);
+}
+@media (min-width:760px){
+  .row{grid-template-columns:132px minmax(0,1fr);gap:26px}
+}
+.row:last-child{border-bottom:0}
+.rlab{
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;letter-spacing:.1em;
+  color:var(--muted);text-transform:uppercase;padding-top:5px;line-height:1.6;
+}
+.rlab .n{color:var(--red);display:block;font-size:13px;letter-spacing:0;margin-bottom:1px}
+.rbody h4{font-family:"Noto Sans KR",sans-serif;font-weight:700;font-size:15.5px;margin-bottom:4px;line-height:1.55}
+.rbody p{font-size:14.5px;color:var(--ink-2);max-width:60ch}
+.rbody ul{margin:6px 0 0;padding-left:15px;display:flex;flex-direction:column;gap:5px;font-size:14.5px;color:var(--ink-2);max-width:60ch}
+.rbody ul li::marker{color:var(--faint)}
+.row.key .rlab .n{font-weight:700}
+.row.key .rbody h4{color:var(--ink)}
+
+/* spec block — 수치표 (dotted leader) */
+.spec{display:flex;flex-direction:column;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.spec-i{
+  display:flex;align-items:baseline;gap:10px;padding:12px 0;
+  border-bottom:1px dotted var(--rule);
+}
+.spec-i:last-child{border-bottom:0}
+.spec-k{font-size:13.5px;color:var(--ink-2);flex:0 1 auto}
+.spec-dot{flex:1 1 auto;border-bottom:1px dotted var(--rule);transform:translateY(-4px);min-width:18px}
+.spec-v{
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:17px;font-weight:700;
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em;white-space:nowrap;
+}
+.spec-v small{font-size:11.5px;font-weight:400;color:var(--muted);letter-spacing:.04em}
+.spec-v .ar{color:var(--faint);font-weight:400;padding:0 2px}
+
+/* tables */
+.tw{overflow-x:auto;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+table{border-collapse:collapse;width:100%;min-width:540px}
+th,td{text-align:left;padding:11px 14px 11px 0;border-bottom:1px solid var(--rule-2);font-size:14px;vertical-align:top;line-height:1.65}
+th{
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);font-weight:400;padding-top:9px;padding-bottom:9px;border-bottom:1px solid var(--rule);
+}
+tr:last-child td{border-bottom:0}
+td.k{font-family:"Inter","Noto Sans KR",sans-serif;font-size:11.5px;color:var(--ink);white-space:nowrap;letter-spacing:.02em}
+td.k b{color:var(--red)}
+
+/* marginal note */
+.note{
+  font-size:12.5px;line-height:1.75;color:var(--muted);
+  border-left:2px solid var(--rule);padding-left:14px;max-width:62ch;
+}
+.note.red{border-left-color:var(--red)}
+.note b{color:var(--ink-2)}
+
+/* ---------- hero ---------- */
+.hero{padding:0;border:0}
+.hero-in{padding:clamp(56px,9vw,104px) 22px 54px}
+@media (min-width:760px){ .hero-in{padding:clamp(64px,9vw,112px) 54px 60px} }
+.byline{
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--muted);
+  padding-bottom:13px;border-bottom:1px solid var(--ink);margin-bottom:34px;
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;
+}
+.hero h1{
+  font-family:"Noto Sans KR",sans-serif;font-weight:700;
+  font-size:clamp(24px,4.2vw,46px);line-height:1.42;letter-spacing:-.022em;
+  margin-bottom:26px;position:relative;
+}
+.keep{white-space:nowrap}
+@media (min-width:520px){ .hero h1 .ln{white-space:nowrap} }
+.mark{position:relative;display:inline-block;white-space:nowrap}
+.mark svg{
+  position:absolute;left:-7%;top:-16%;width:114%;height:132%;
+  overflow:visible;pointer-events:none;
+}
+.mark path{
+  fill:none;stroke:var(--red);stroke-width:2;stroke-linecap:round;opacity:.9;
+  stroke-dasharray:var(--len,520);stroke-dashoffset:0;
+}
+.js .mark path{stroke-dashoffset:var(--len,520)}
+.js .mark.draw path{animation:draw .95s cubic-bezier(.55,.08,.3,1) forwards}
+.js .mark.hero.draw path{animation-delay:.5s}
+.mark.u svg{left:-4%;top:auto;bottom:-30%;width:108%;height:62%}
+.mark.u path{stroke-width:2.4}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero .sub{max-width:54ch;color:var(--ink-2);font-size:15.5px;margin-bottom:40px}
+.hero-scale{
+  margin-top:30px;padding-top:14px;border-top:1px solid var(--rule);
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:11px;line-height:2;
+  color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:.01em;
+}
+.hero-scale b{color:var(--ink);font-weight:700}
+
+/* pipeline strip */
+.strip{display:flex;gap:0;margin:0 0 8px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.strip div{
+  flex:1;padding:9px 0 8px;border-right:1px solid var(--rule-2);
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;letter-spacing:.1em;color:var(--muted);
+  text-align:center;position:relative;overflow:hidden;
+}
+.strip div:last-child{border-right:0}
+.strip div::after{
+  content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--ink);
+  transform:scaleX(1);transform-origin:left;
+}
+.js .strip div::after{transform:scaleX(0)}
+.js.drawn .strip div::after{animation:sweep .5s cubic-bezier(.3,.7,.3,1) forwards}
+.strip div:nth-child(1)::after{animation-delay:.10s}
+.strip div:nth-child(2)::after{animation-delay:.19s}
+.strip div:nth-child(3)::after{animation-delay:.28s}
+.strip div:nth-child(4)::after{animation-delay:.37s}
+.strip div:nth-child(5)::after{animation-delay:.46s;background:var(--red)}
+@keyframes sweep{to{transform:scaleX(1)}}
+
+/* ---------- year track ---------- */
+.years{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--ink)}
+@media (min-width:940px){.years{grid-template-columns:repeat(3,1fr)}}
+.yr{padding:22px 0 26px;border-bottom:1px solid var(--rule-2)}
+@media (min-width:940px){
+  .yr{padding:22px 22px 8px;border-bottom:0;border-right:1px solid var(--rule-2)}
+  .yr:first-child{padding-left:0}
+  .yr:last-child{border-right:0;padding-right:0}
+}
+.yhead{display:flex;align-items:baseline;gap:9px;margin-bottom:3px}
+.ynum{font-family:"Inter","Noto Sans KR",sans-serif;font-size:22px;font-weight:700;letter-spacing:-.03em}
+.ytag{font-family:"Noto Sans KR",sans-serif;font-size:12px;font-weight:600;color:var(--red)}
+.ybar{position:relative;height:5px;background:var(--sheet-2);margin:9px 0 7px;border:1px solid var(--rule-2)}
+.yfill{position:absolute;inset:0 auto 0 0;background:var(--rule)}
+.yepic{position:absolute;inset:0 auto 0 0;background:var(--ink)}
+.ycnt{font-family:"Inter","Noto Sans KR",sans-serif;font-size:10.5px;color:var(--muted);font-variant-numeric:tabular-nums;margin-bottom:12px}
+.ydesc{font-family:"Noto Sans KR",sans-serif;font-size:15px;font-weight:700;margin-bottom:9px;line-height:1.5}
+.yrole{display:inline-block;font-family:"Noto Sans KR",sans-serif;font-size:12px;font-weight:600;color:var(--ink-2);border:1px solid var(--rule);border-radius:3px;padding:2px 8px;margin:-3px 0 11px}
+.ylist{margin:0;padding-left:15px;display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:var(--ink-2);line-height:1.62}
+.ylist li::marker{color:var(--faint)}
+
+/* ---------- flow ---------- */
+.flow{max-width:600px;margin:0 auto}
+.frow{display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:12px;align-items:center}
+.fconn{width:1px;height:14px;background:var(--rule);margin:0 auto}
+.fbox{
+  border:1px solid var(--rule);background:var(--sheet-2);
+  padding:10px 14px;text-align:center;font-size:13.5px;line-height:1.55;
+}
+.fbox .sm{display:block;font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;color:var(--muted);letter-spacing:.06em;margin-top:2px}
+.fbox.dec{border-style:dashed;background:transparent}
+.fbox.acc{border-color:var(--ink);background:var(--sheet);border-width:1px 1px 2px}
+.fexit{
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;color:var(--faint);
+  border:1px dashed var(--rule);padding:4px 5px;text-align:center;line-height:1.45;
+}
+.jql{
+  display:block;font-family:"Inter","Noto Sans KR",sans-serif;font-size:11px;line-height:1.75;
+  background:var(--sheet);border:1px solid var(--rule-2);
+  padding:9px 11px;color:var(--ink-2);text-align:left;white-space:pre-wrap;word-break:break-all;margin-top:7px;
+}
+.branch{display:grid;gap:0;grid-template-columns:1fr;margin-top:18px;border-top:1px solid var(--ink)}
+@media (min-width:760px){.branch{grid-template-columns:1fr 1fr}}
+.bcol{padding:16px 0;border-bottom:1px solid var(--rule-2)}
+@media (min-width:760px){
+  .bcol{padding:16px 22px 18px 0;border-bottom:0;border-right:1px solid var(--rule-2)}
+  .bcol:last-child{border-right:0;padding-right:0;padding-left:22px}
+}
+.bh{font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:9px;color:var(--muted)}
+.bh b{color:var(--red)}
+.bcol ol{margin:0;padding-left:15px;display:flex;flex-direction:column;gap:6px;font-size:13.5px;color:var(--ink-2)}
+
+/* ---------- demo ---------- */
+.dlead{margin-bottom:20px}
+.dlead h3{
+  font-family:"Noto Sans KR",sans-serif;font-weight:700;
+  font-size:clamp(18px,2.3vw,23px);line-height:1.4;letter-spacing:-.02em;
+  margin-bottom:11px;position:relative;padding-bottom:9px;
+}
+.dlead h3::after{
+  content:"";position:absolute;left:0;bottom:0;width:38px;height:2px;background:var(--red);
+}
+.dlead p{font-size:13.5px;line-height:1.95;color:var(--ink-2);max-width:66ch}
+
+.demo{border:1px solid var(--ink);background:var(--sheet);box-shadow:var(--lift)}
+.dhead{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  padding:10px 14px;border-bottom:1px solid var(--rule);background:var(--sheet-2);
+}
+.dtitle{font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.dbody{padding:20px 18px;position:relative;min-height:232px}
+.btn{
+  font-family:"Noto Sans KR",sans-serif;font-size:13px;font-weight:600;
+  padding:7px 15px;border:1px solid var(--ink);background:transparent;color:var(--ink);
+  cursor:pointer;transition:background .16s ease,color .16s ease;
+}
+.btn:hover{background:var(--ink);color:var(--sheet)}
+.btn.solid{background:var(--ink);color:var(--sheet)}
+.btn.solid:hover{opacity:.84}
+.btn.sm{font-size:11.5px;padding:4px 10px;font-weight:400}
+.btn.sm:disabled{opacity:.45;cursor:default;background:transparent;color:var(--ink)}
+.btn.red{border-color:var(--red);color:var(--red)}
+.btn.red:hover{background:var(--red);color:var(--sheet)}
+.chipx{font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;letter-spacing:.1em;padding:3px 7px;border:1px solid var(--rule);color:var(--muted)}
+.chipx.hot{border-color:var(--red);color:var(--red)}
+.chipx.ok{border-color:var(--ink);color:var(--ink)}
+
+.bot{display:grid;grid-template-columns:24px 1fr;gap:10px}
+.bav{width:24px;height:24px;background:var(--ink);color:var(--sheet);display:grid;place-items:center;font-family:"Inter","Noto Sans KR",sans-serif;font-size:9px;font-weight:700}
+.bname{font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:6px}
+.bname span{font-family:"Inter","Noto Sans KR",sans-serif;font-size:9px;color:var(--muted);border:1px solid var(--rule);padding:0 4px;font-weight:400}
+.bcard{border-left:2px solid var(--ink);padding:9px 0 0 12px;margin-top:7px}
+.bcard.err{border-left-color:var(--red)}
+.bhd{font-size:13px;font-weight:700;margin-bottom:7px}
+.tk{padding:8px 0;border-top:1px solid var(--rule-2)}
+.tk:first-of-type{border-top:0}
+.tkk{font-family:"Inter","Noto Sans KR",sans-serif;font-size:11px;color:var(--muted)}
+.tks{font-size:13.5px;margin:1px 0 3px}
+.tkm{font-family:"Inter","Noto Sans KR",sans-serif;font-size:10.5px;color:var(--muted);font-variant-numeric:tabular-nums;margin-bottom:6px}
+.tkm.late{color:var(--red)}
+.tka{display:flex;gap:6px;flex-wrap:wrap}
+.res{border:1px solid var(--rule);border-left:2px solid var(--ink);padding:11px 13px;margin-top:11px;background:var(--sheet-2)}
+.res.late{border-left-color:var(--red)}
+.resh{font-size:12.5px;font-weight:700;margin-bottom:7px}
+.res dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:2px 14px;font-family:"Inter","Noto Sans KR",sans-serif;font-size:10.5px;font-variant-numeric:tabular-nums}
+.res dt{color:var(--muted)}
+.res dd{margin:0;color:var(--ink-2)}
+
+.lock{position:absolute;inset:0;background:color-mix(in srgb,var(--sheet) 90%,transparent);display:none;place-items:center;padding:18px;z-index:5}
+.lock.show{display:grid;animation:lk .2s ease both}
+@keyframes lk{from{opacity:0}to{opacity:1}}
+.lbox{background:var(--sheet);border:1px solid var(--red);border-top-width:3px;padding:19px 21px;max-width:390px;box-shadow:var(--lift)}
+.ltag{font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:7px}
+.lbox h4{font-family:"Noto Sans KR",sans-serif;font-weight:700;font-size:16px;margin-bottom:6px}
+.lbox p{font-size:13.5px;color:var(--ink-2);margin-bottom:13px}
+.hint{font-size:11.5px;color:var(--faint);margin-top:13px}
+
+/* ---------- simulator ---------- */
+.sim{display:grid;gap:24px;grid-template-columns:1fr}
+@media (min-width:760px){.sim{grid-template-columns:minmax(0,215px) minmax(0,1fr)}}
+.sim label{display:block;font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+input[type=range]{width:100%;accent-color:var(--red)}
+.simr{font-family:"Inter","Noto Sans KR",sans-serif;font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted);margin-top:14px;line-height:2}
+.simr b{color:var(--ink);font-weight:700;font-size:13.5px}
+.bars{display:flex;flex-direction:column;gap:15px;justify-content:center}
+.bl{display:flex;justify-content:space-between;font-family:"Inter","Noto Sans KR",sans-serif;font-size:10.5px;color:var(--muted);margin-bottom:5px;font-variant-numeric:tabular-nums}
+.btrack{height:20px;background:var(--sheet-2);border:1px solid var(--rule-2)}
+.bfill{height:100%;background:var(--ink);width:0;transition:width .32s cubic-bezier(.3,.7,.3,1)}
+.brow.alt .bfill{background:var(--red)}
+.verdict{font-size:13.5px;color:var(--ink-2);border-left:2px solid var(--red);padding-left:13px;margin-top:2px}
+
+/* ---------- toggle ---------- */
+.tog{display:inline-flex;border:1px solid var(--ink)}
+.tog button{
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  padding:6px 16px;border:0;background:transparent;color:var(--muted);cursor:pointer;
+}
+.tog button.on{background:var(--ink);color:var(--sheet)}
+.pane{display:none;margin-top:18px}
+.pane.on{display:block}
+.plist{margin:0;padding-left:15px;display:flex;flex-direction:column;gap:7px;font-size:14.5px;color:var(--ink-2);max-width:62ch}
+.plist li::marker{color:var(--faint)}
+
+/* ---------- archive ---------- */
+.arc{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--ink)}
+@media (min-width:720px){.arc{grid-template-columns:1fr 1fr;column-gap:40px}}
+.ai{padding:16px 0 17px;border-bottom:1px solid var(--rule-2)}
+.aik{font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+.ai h4{font-family:"Noto Sans KR",sans-serif;font-weight:700;font-size:14.5px;margin-bottom:4px}
+.ai p{font-size:13.5px;color:var(--ink-2)}
+
+/* ---------- skills ---------- */
+.lgd{
+  display:flex;flex-wrap:wrap;gap:10px 26px;margin:22px 0 4px;
+  padding:13px 0;border-top:1px solid var(--rule-2);border-bottom:1px solid var(--rule-2);
+}
+.lvl{display:inline-flex;align-items:center;gap:8px}
+.lvl i{display:inline-flex;gap:3px}
+.lvl i b{
+  display:block;width:9px;height:9px;border:1px solid var(--ink);
+  background:transparent;flex:none;
+}
+.lvl i b.on{background:var(--ink)}
+.lvl > span{
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;letter-spacing:.08em;
+  color:var(--muted);white-space:nowrap;
+}
+.lgd-req{display:inline-flex;align-items:center;gap:7px;font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;letter-spacing:.06em;color:var(--muted)}
+.req2{
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:8.5px;font-style:normal;font-weight:400;letter-spacing:.1em;
+  border:1px solid var(--red);color:var(--red);padding:1px 4px;white-space:nowrap;
+}
+.sk{margin-top:8px}
+.skg{padding:20px 0 22px;border-top:1px solid var(--ink)}
+.skg-h{
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--red);margin-bottom:16px;
+}
+.tiles{display:flex;flex-wrap:wrap;gap:10px}
+.tile{
+  position:relative;flex:0 0 auto;width:74px;padding:14px 6px 11px;
+  display:flex;flex-direction:column;align-items:center;gap:11px;
+  background:var(--sheet);border:1px solid var(--rule);border-radius:0;
+  cursor:pointer;color:var(--ink);font:inherit;
+  transition:border-color .16s ease,background .16s ease,transform .16s ease;
+}
+.tile:hover,.tile.open{border-color:var(--ink);background:var(--sheet-2);transform:translateY(-2px)}
+.tile:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.tmk{display:block;width:26px;height:26px;color:var(--ink-2);transition:color .16s ease}
+.tmk svg{width:100%;height:100%;display:block}
+.tile:hover .tmk,.tile.open .tmk{color:var(--ink)}
+.tlvl{display:flex}
+.tlvl i{display:flex;gap:2px}
+.tlvl i b{display:block;width:7px;height:7px;border:1px solid var(--rule);background:transparent;flex:none}
+.tlvl i b.on{background:var(--ink);border-color:var(--ink)}
+.tip{display:none}
+
+/* floating tooltip */
+#tipbox{
+  position:fixed;z-index:9999;max-width:288px;pointer-events:none;
+  background:var(--sheet);border:1px solid var(--ink);border-top-width:2px;
+  padding:12px 14px 13px;box-shadow:var(--lift);
+  opacity:0;transform:translateY(4px);transition:opacity .14s ease,transform .14s ease;
+}
+#tipbox.on{opacity:1;transform:translateY(0)}
+#tipbox .n{font-size:14px;font-weight:700;line-height:1.4;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+#tipbox .l{
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--red);margin:3px 0 7px;display:block;
+}
+#tipbox .e{font-size:12.5px;line-height:1.7;color:var(--ink-2);display:block}
+
+/* ---------- footer ---------- */
+.foot{
+  display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:flex-end;
+  padding:30px 22px 34px;border-top:1px solid var(--ink);
+}
+@media (min-width:760px){ .foot{padding:32px 54px 38px} }
+.foot .nm{font-family:"Noto Sans KR",sans-serif;font-size:17px;font-weight:700}
+.foot .mt{font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;color:var(--faint);line-height:1.8;letter-spacing:.04em}
+.foot a{border-bottom:1px solid var(--rule)}
+.foot a:hover{border-bottom-color:var(--ink)}
+
+/* ---------- reveal ---------- */
+.js .rv{opacity:0;transform:translateY(14px)}
+.js .rv.in{opacity:1;transform:none;transition:opacity .62s cubic-bezier(.25,.6,.3,1),transform .62s cubic-bezier(.25,.6,.3,1)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
+  .js .rv{opacity:1;transform:none}
+  .js .mark path{stroke-dashoffset:0}
+  .js .strip div::after{transform:scaleX(1)}
+}
+
+@media print{
+  .js .rv{opacity:1 !important;transform:none !important}
+  .js .mark path{stroke-dashoffset:0 !important}
+  .js .strip div::after{transform:scaleX(1) !important}
+  body{background:#fff;color:#000}
+  .axis,.demo,.tog,#tipbox{display:none !important}
+  .tiles{display:block}
+  .tile{
+    width:auto;display:grid;grid-template-columns:24px 44px minmax(0,1fr);
+    gap:12px;align-items:center;text-align:left;
+    border:0;border-top:1px dotted #bbb;padding:7px 0;background:none;transform:none;
+  }
+  .tmk{width:22px;height:22px}
+  .tip{display:block}
+  .tip-n{font-weight:700;font-size:12.5px;display:inline;margin-right:7px}
+  .tip-l{font-size:10px;display:inline;color:#666}
+  .tip-e{display:block;font-size:11px;line-height:1.6;margin-top:2px}
+  .sheet{border:0;box-shadow:none;margin:0}
+  section{padding:22px 0;break-inside:avoid}
+  .rv{opacity:1;transform:none}
+}
+
+/* ============================================================
+   스토리 구조 — 주장 → 훅 → 3줄 스토리 → 자세히(접힘)
+   ============================================================ */
+
+/* ---------- hero points ---------- */
+.pts-intro{
+  font-size:15px;font-weight:600;color:var(--ink-2);margin:40px 0 12px;
+}
+.points{display:flex;flex-direction:column;border-top:1px solid var(--ink)}
+.pt{
+  display:grid;grid-template-columns:40px minmax(0,1fr) 22px;gap:14px;align-items:start;
+  padding:18px 0;border-bottom:1px solid var(--rule-2);color:inherit;
+  transition:background .18s ease,padding .18s ease;
+}
+.pt:hover{background:var(--sheet-2);padding-left:10px;padding-right:10px}
+.pt:focus-visible{outline:2px solid var(--red);outline-offset:-2px}
+.pt-n{font-family:"Inter","Noto Sans KR",sans-serif;font-size:13px;font-weight:700;color:var(--red);padding-top:4px}
+.pt-b{display:flex;flex-direction:column;gap:3px;min-width:0}
+.pt-t{font-family:"Noto Sans KR",sans-serif;font-weight:700;font-size:clamp(17px,2vw,20px);line-height:1.4}
+.pt-c{font-size:14.5px;color:var(--ink-2);line-height:1.65}
+.pt-p{font-family:"Inter","Noto Sans KR",sans-serif;font-size:11px;color:var(--muted);letter-spacing:.01em;margin-top:3px;line-height:1.6}
+.pt-go{font-family:"Inter","Noto Sans KR",sans-serif;color:var(--faint);padding-top:4px;transition:transform .18s ease,color .18s ease}
+.pt:hover .pt-go{color:var(--red);transform:translateX(3px)}
+.cue{
+  display:inline-flex;align-items:center;gap:10px;margin-top:30px;
+  font-size:13.5px;color:var(--ink-2);border-bottom:1px solid var(--rule);padding-bottom:3px;
+}
+.cue:hover{color:var(--ink);border-bottom-color:var(--red)}
+.cue-arrow{color:var(--red);display:inline-block;animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+
+/* ---------- hook / story ---------- */
+.hook{margin-top:30px}
+.story{margin-top:34px;border-top:1px solid var(--ink)}
+.st{display:grid;grid-template-columns:1fr;gap:3px;padding:14px 0;border-bottom:1px solid var(--rule-2)}
+@media (min-width:760px){ .st{grid-template-columns:84px minmax(0,1fr);gap:22px;align-items:baseline} }
+.st-k{font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.st p{font-size:15px;color:var(--ink);line-height:1.8;max-width:62ch}
+.pane-h{font-family:"Noto Sans KR",sans-serif;font-weight:700;font-size:16px;margin-bottom:10px}
+
+/* ---------- details (접힘) ---------- */
+details.more{margin-top:22px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+details.more > summary{
+  list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;
+  padding:14px 0;font-weight:700;font-size:14px;color:var(--ink);
+}
+details.more > summary::-webkit-details-marker{display:none}
+details.more > summary::before{
+  content:"+";font-family:"Inter","Noto Sans KR",sans-serif;font-weight:400;font-size:15px;color:var(--red);width:14px;display:inline-block;
+}
+details.more[open] > summary::before{content:"−"}
+details.more > summary:hover{color:var(--red)}
+details.more > summary:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.more-hint{font-family:"Inter","Noto Sans KR",sans-serif;font-size:10.5px;font-weight:400;color:var(--muted);letter-spacing:.02em}
+.more-body{padding:8px 0 28px;display:flex;flex-direction:column;gap:32px}
+
+/* ---------- 02 · 당시 흐름에서 짚은 두 곳 ---------- */
+.ff{border:1px solid var(--ink);background:var(--sheet);box-shadow:var(--lift)}
+.ff-head{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  padding:10px 14px;border-bottom:1px solid var(--rule);background:var(--sheet-2);
+}
+.ff-tabs{display:inline-flex;border:1px solid var(--ink)}
+.ff-tabs button{
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;letter-spacing:.08em;
+  padding:6px 14px;border:0;background:transparent;color:var(--muted);cursor:pointer;
+}
+.ff-tabs button.on{background:var(--ink);color:var(--sheet)}
+.ff-tabs button.pulse{animation:ffpulse 1.1s ease-in-out 3}
+@keyframes ffpulse{0%,100%{box-shadow:inset 0 0 0 0 var(--red)}50%{box-shadow:inset 0 0 0 2px var(--red)}}
+.ff-count{font-family:"Inter","Noto Sans KR",sans-serif;font-size:10.5px;color:var(--muted);letter-spacing:.03em}
+.ff-count b{color:var(--red);font-size:12px}
+.ff-view{display:none;padding:18px 16px 20px}
+.ff-view.on{display:block}
+.ff-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:8px}
+.ff-steps li{position:relative;display:flex}
+@media (min-width:860px){
+  .ff-steps{grid-template-columns:repeat(5,minmax(0,1fr));gap:0}
+  .ff-steps li:not(:last-child)::after{
+    content:"";position:absolute;right:-5px;top:50%;width:10px;height:1px;background:var(--ink-2);z-index:1;
+  }
+  .ff-steps .ff-step{margin:0 5px}
+}
+.ff-step{
+  width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer;
+  background:var(--sheet);border:1px solid var(--rule);padding:12px 12px 13px;
+  display:flex;flex-direction:column;gap:3px;
+  transition:border-color .15s ease,background .15s ease,transform .15s ease;
+}
+button.ff-step:hover{border-color:var(--ink);transform:translateY(-2px)}
+.ff-no{font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;color:var(--muted)}
+.ff-who{font-size:12.5px;font-weight:700;line-height:1.4}
+.ff-what{font-size:12.5px;color:var(--ink-2);line-height:1.5}
+.ff-step.is-ok{border-color:var(--ink)}
+.ff-step.is-warn{border-style:dashed;border-color:var(--ink-2)}
+.ff-step.is-bad{border-color:var(--red);background:var(--red-soft)}
+.ff-step.is-bad .ff-no{color:var(--red);font-weight:700}
+.ff-flag{
+  align-self:flex-start;font-family:"Inter","Noto Sans KR",sans-serif;font-size:9px;letter-spacing:.1em;
+  color:var(--sheet);background:var(--red);padding:1px 5px;margin-bottom:3px;
+}
+.ff-step.is-sel{border-color:var(--ink);border-width:1px 1px 3px;background:var(--sheet-2)}
+.ff-step.is-bad.is-sel{border-color:var(--red);background:var(--red-soft)}
+.ff-step.is-fix{border-color:var(--ink);border-width:1px 1px 3px;background:var(--sheet-2)}
+.ff-steps.after .ff-step{cursor:default}
+.ff-edge{margin-top:10px;border-style:dashed;flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.ff-msg{
+  margin-top:14px;padding:12px 14px;border-left:2px solid var(--rule);
+  font-size:14px;line-height:1.8;color:var(--ink-2);min-height:56px;
+}
+.ff-msg.bad{border-left-color:var(--red);color:var(--ink)}
+.ff-msg .tag{
+  display:block;font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--red);margin-bottom:3px;
+}
+.ff-msg .done{display:block;margin-top:8px;font-weight:700;color:var(--ink)}
+.ff-fix{margin-top:18px;display:flex;flex-direction:column;gap:10px}
+.ff-fix p{font-size:14px;line-height:1.8;color:var(--ink-2);border-left:2px solid var(--ink);padding-left:12px}
+.ff-fix b{color:var(--ink)}
+
+/* ---------- 03 · 세 가지 결정으로 출시일 맞추기 ---------- */
+.ls{border:1px solid var(--ink);background:var(--sheet);box-shadow:var(--lift);padding:18px 18px 18px;--launch:71.4286%}
+.ls-row{display:grid;grid-template-columns:52px minmax(0,1fr) 50px;gap:12px;align-items:center;padding:6px 0}
+.ls-lab{font-size:13px;font-weight:700}
+.ls-track{position:relative;height:22px;background:var(--sheet-2);border:1px solid var(--rule-2)}
+.ls-track::after{
+  content:"";position:absolute;top:-7px;bottom:-7px;left:var(--launch);width:0;
+  border-left:1.5px dashed var(--red);
+}
+.ls-fill{
+  position:absolute;top:0;bottom:0;left:0;width:0;background:var(--ink);
+  transition:width .5s cubic-bezier(.3,.7,.3,1),background-color .25s ease;
+}
+.ls-fill.over{background:var(--red)}
+.ls-head{padding:0}
+.ls-head .ls-track{height:16px;background:none;border:0}
+.ls-head .ls-track::after{display:none}
+.ls-line-lab{
+  position:absolute;left:var(--launch);bottom:0;transform:translateX(-50%);
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;letter-spacing:.1em;color:var(--red);white-space:nowrap;
+}
+.ls-val{font-family:"Inter","Noto Sans KR",sans-serif;font-size:12px;font-variant-numeric:tabular-nums;text-align:right}
+.ls-val.over{color:var(--red);font-weight:700}
+.ls-status{margin:16px 0 14px;font-size:14.5px;font-weight:700;min-height:22px}
+.ls-status.over{color:var(--red)}
+.ls-status.ok{color:var(--ink)}
+.ls-status.ok::before{content:"✓ ";color:var(--ink)}
+.ls-levers{display:flex;flex-direction:column;gap:8px}
+@media (min-width:760px){ .ls-levers{flex-direction:row} }
+.lever{
+  flex:1;display:flex;align-items:center;gap:10px;text-align:left;
+  font:inherit;font-size:13px;line-height:1.45;color:var(--ink);
+  background:transparent;border:1px solid var(--rule);padding:10px 12px;cursor:pointer;
+  transition:border-color .15s ease,background .15s ease;
+}
+.lever:hover{border-color:var(--ink)}
+.lv-box{flex:none;width:14px;height:14px;border:1px solid var(--ink);position:relative}
+.lever[aria-pressed="true"]{border-color:var(--ink);background:var(--sheet-2)}
+.lever[aria-pressed="true"] .lv-box{background:var(--ink)}
+.lever[aria-pressed="true"] .lv-box::after{
+  content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;
+  border:solid var(--sheet);border-width:0 2px 2px 0;transform:rotate(45deg);
+}
+.ls-why{
+  margin-top:14px;font-size:13.5px;line-height:1.8;color:var(--ink-2);
+  border-left:2px solid var(--red);padding-left:12px;min-height:50px;
+}
+
+/* ---------- 외주 역산 타임라인 ---------- */
+.rtl-cap{font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;letter-spacing:.08em;color:var(--red);margin-bottom:8px}
+.rtl{display:grid;grid-template-columns:1fr;gap:8px}
+@media (min-width:760px){ .rtl{grid-template-columns:repeat(4,minmax(0,1fr));gap:0} .rtl-i{margin:0 4px} }
+.rtl-i{border:1px solid var(--rule);padding:11px 12px;background:var(--sheet)}
+.rtl-i.end{border-color:var(--ink);border-width:1px 1px 3px}
+.rtl-k{font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;letter-spacing:.1em;color:var(--muted);display:block;margin-bottom:3px}
+.rtl-t{font-size:13px;font-weight:700;line-height:1.45}
+
+/* ---------- appendix ---------- */
+.sub-h{
+  font-family:"Noto Sans KR",sans-serif;font-weight:700;font-size:19px;
+  margin:44px 0 8px;padding-top:26px;border-top:1px solid var(--ink);
+}
+
+@media print{
+  .cue{display:none !important}
+  .ff-view{display:block !important}
+  .ls,.ff{box-shadow:none}
+}
+
+/* ---------- Before → After 넘김 버튼 ---------- */
+.tog button.tab-next:not(.on),.ff-tabs button.tab-next:not(.on){color:var(--red);font-weight:700}
+.nextcta{
+  display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 14px;width:100%;
+  margin-top:18px;padding:14px 16px;text-align:left;cursor:pointer;
+  font:inherit;font-size:14px;color:var(--ink-2);
+  background:var(--red-soft);border:1px solid var(--red);
+  transition:background .16s ease,color .16s ease;
+}
+.nextcta b{color:var(--red);font-size:14.5px;white-space:nowrap}
+.nextcta:hover{background:var(--red);color:var(--sheet)}
+.nextcta:hover b{color:var(--sheet)}
+@media print{
+  .pane{display:block !important}
+  .nextcta{display:none !important}
+}
+
+/* ---------- 01 문제 분석 · 조치 ---------- */
+.tog{flex-wrap:wrap}
+.qa{margin-bottom:16px}
+.qa-q{font-weight:700;font-size:14.5px;margin-bottom:6px;color:var(--ink)}
+.cz{
+  display:inline-block;font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;letter-spacing:.08em;font-weight:400;
+  color:var(--red);border:1px solid var(--red);padding:0 5px;margin-right:8px;vertical-align:1px;white-space:nowrap;
+}
+.acts{display:flex;flex-direction:column;gap:18px}
+.act{border-left:2px solid var(--ink);padding-left:14px}
+.act-h{font-weight:700;font-size:14.5px;margin-bottom:6px;color:var(--ink)}
+
+/* ---------- 01 결과 · 채널 재현 · 온보딩 단계 ---------- */
+.rgrid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--ink)}
+@media (min-width:640px){ .rgrid{grid-template-columns:1fr 1fr} }
+.rcell{display:flex;flex-direction:column;gap:2px;padding:16px 16px 16px 0;border-bottom:1px solid var(--rule-2)}
+@media (min-width:640px){ .rcell:nth-child(odd){border-right:1px solid var(--rule-2)} .rcell:nth-child(even){padding-left:18px} }
+.rc-k{font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.rc-v{font-family:"Inter","Noto Sans KR",sans-serif;font-weight:700;font-size:26px;line-height:1.3;color:var(--ink);font-variant-numeric:tabular-nums}
+.rc-v small{font-size:14px;margin-left:2px;color:var(--muted);font-weight:400}
+.rc-v i{font-style:normal;color:var(--faint);font-weight:400;padding:0 2px}
+.rc-d{font-size:13px;color:var(--ink-2);line-height:1.6}
+
+.chan{margin-top:22px;border:1px solid var(--ink);background:var(--sheet);box-shadow:var(--lift)}
+.chan-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 14px;border-bottom:1px solid var(--rule);background:var(--sheet-2)}
+.chan-name{font-size:13px;font-weight:700}
+.chan-tag{font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;letter-spacing:.08em;color:var(--muted)}
+.chan-msg{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;padding:16px 14px}
+.chan-body{min-width:0}
+.bname em{font-style:normal;font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;color:var(--muted);font-weight:400;border:0;padding:0}
+.chan-t{font-size:13.5px;font-weight:700;margin:8px 0 4px}
+.chan-s{font-size:13px;color:var(--ink-2);margin-bottom:8px}
+.chan-tw table{min-width:460px}
+.chan-tw th,.chan-tw td{font-size:12.5px;padding:7px 10px 7px 0}
+.chan-f{font-size:12px;font-weight:700;color:var(--ink-2);margin-top:8px}
+.thr{margin-top:14px;border-top:1px solid var(--rule-2);padding-top:10px;display:flex;flex-direction:column;gap:12px}
+.thr-cap{font-size:11.5px;color:var(--muted)}
+.thr-i{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px}
+.thr-i p{font-size:13px;color:var(--ink-2);line-height:1.7;margin-top:2px}
+.bav.pm{background:var(--red)}
+.bav.ld{background:var(--ink-2)}
+.at{color:var(--red);background:var(--red-soft);padding:0 3px;white-space:nowrap}
+
+.obd{display:flex;flex-direction:column;border-left:1px solid var(--rule);margin-left:12px}
+.obd-i{position:relative;display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;padding:0 0 22px 0}
+.obd-i:last-child{padding-bottom:0}
+.obd-n{
+  position:relative;left:-13px;width:26px;height:26px;display:grid;place-items:center;
+  font-family:"Inter","Noto Sans KR",sans-serif;font-size:10px;font-weight:700;
+  background:var(--sheet);border:1px solid var(--ink);color:var(--ink);
+}
+.obd-i.key .obd-n{background:var(--red);border-color:var(--red);color:var(--sheet)}
+.obd-i h4{font-size:15px;font-weight:700;margin:3px 0 4px;line-height:1.5}
+.obd-i p{font-size:14px;color:var(--ink-2);line-height:1.8;max-width:62ch}
+
+/* ---------- Structure 조율 장면 ---------- */
+.scene{margin-top:26px;border:1px solid var(--ink);background:var(--sheet);box-shadow:var(--lift)}
+.scene-body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:14px}
+.scene-q{border-left:2px solid var(--rule);padding:2px 0 2px 12px}
+.scene-qk,.scene-wk{display:block;font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+.scene-q p,.scene-p{font-size:13.5px;color:var(--ink-2);line-height:1.8}
+.sq-card{border:1px solid var(--rule);background:var(--sheet-2);padding:10px 12px 10px}
+.sq-owner{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:6px}
+.sq-tw{border-top:1px solid var(--rule);border-bottom:0;background:var(--sheet)}
+.sq-tw table{min-width:520px}
+.sq-tw th,.sq-tw td{font-size:12px;padding:6px 8px 6px 6px;vertical-align:middle}
+.sq-tw tr.hl td{background:var(--red-soft);border-top:1.5px solid var(--red);border-bottom:1.5px solid var(--red)}
+.sq-tw tr.hl td:first-child{border-left:1.5px solid var(--red)}
+.sq-tw tr.hl td:last-child{border-right:1.5px solid var(--red)}
+.sq{display:inline-grid;place-items:center;width:14px;height:14px;margin-right:6px;font-family:"Inter","Noto Sans KR",sans-serif;font-size:8.5px;font-weight:700;color:var(--sheet);background:var(--ink-2);vertical-align:1px}
+.stt{font-family:"Inter","Noto Sans KR",sans-serif;font-size:9.5px;padding:1px 5px;border:1px solid var(--rule);color:var(--muted);white-space:nowrap}
+.stt.w{border-color:var(--ink);color:var(--ink)}
+.sq-note{font-size:12.5px;color:var(--ink-2);margin-top:8px;line-height:1.7}
+.scene-why{border-top:1px solid var(--ink);padding-top:12px}
+
+/* ---------- 결과 탭 강조 ---------- */
+.tog button.tab-goal{color:var(--red);font-weight:700;box-shadow:none}
+.tog button.tab-goal:hover{background:var(--red-soft)}
+.tog button.tab-goal.on{background:var(--red);color:var(--sheet);box-shadow:none}
+#ba-result .rc-v{color:var(--red);font-size:30px}
+
+/* ============================================================
+   라벨 폰트 정리 · 상태 뱃지(lozenge)
+   Chivo Mono에는 한글 글리프가 없어 한글 라벨이 대체 글꼴 + 넓은 자간으로 보이던 문제를
+   Gothic A1로 통일하고, 구분 라벨은 Jira 상태 뱃지 형태로 바꿉니다.
+   ============================================================ */
+.rlab,.rc-k,.skg-h,.sno,.st-k,.aik,.scene-qk,.scene-wk,.bh,.rtl-k,.rtl-cap,.ltag,.ff-msg .tag,.cz,.more-hint,
+#tipbox .l,.tip-l,.lvl > span,.ax .d,.chan-tag,.dtitle,.pt-p,.stamp,.tog button,.ff-tabs button,.chipx,
+.ls-line-lab,.tkm,.res dl,.fbox .sm,.fexit,th,td.k,.stt{
+  font-family:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
+  letter-spacing:0;text-transform:none;
+}
+
+/* 뱃지 공통 */
+.sno,.rlab,.rc-k,.skg-h,.st-k,.aik,.scene-qk,.scene-wk,.bh,.ltag,.ff-msg .tag,#tipbox .l,.rtl-k{
+  display:flex;align-items:center;gap:5px;width:fit-content;
+  font-size:11.5px;font-weight:700;line-height:1.5;
+  padding:2px 8px;border-radius:3px;border:0;
+  background:var(--sheet-2);color:var(--ink-2);
+}
+.cz{
+  display:inline-flex;align-items:center;vertical-align:1px;
+  font-size:11px;font-weight:700;line-height:1.5;
+  padding:1px 7px;margin-right:8px;border-radius:3px;border:0;
+  background:var(--red-soft);color:var(--red);
+}
+/* 강조 뱃지 (빨강) */
+.sno,.rc-k,.st-k,.skg-h,.scene-qk,.scene-wk,.ltag,.ff-msg .tag,#tipbox .l,.row.key .rlab{
+  background:var(--red-soft);color:var(--red);
+}
+
+/* 위치별 보정 */
+.sno{margin-bottom:9px}
+.rlab{justify-self:start;align-self:start;margin-top:3px;padding-top:2px}
+.rlab .n{display:inline;font-size:11.5px;margin:0;color:var(--red);letter-spacing:0}
+.row.key .rlab .n{font-weight:700}
+.st-k{justify-self:start;align-self:start;margin-top:3px}
+.rc-k{margin-bottom:4px}
+.skg-h{margin-bottom:14px}
+.aik{margin-bottom:6px}
+.scene-qk,.scene-wk{margin-bottom:6px}
+.bh{margin-bottom:9px}
+.bh b{color:var(--red)}
+.ff-msg .tag{margin-bottom:6px}
+#tipbox .l{margin:4px 0 7px}
+.rtl-k{margin-bottom:5px}
+.ltag{margin-bottom:8px}
+
+/* 뱃지가 아닌 한글 보조 텍스트 */
+.tog button,.ff-tabs button{font-size:12.5px;font-weight:600}
+.tog button.tab-next:not(.on),.ff-tabs button.tab-next:not(.on),.tog button.tab-goal{font-weight:700}
+.stamp{font-size:11px;font-weight:600}
+.more-hint{font-size:12px}
+.ax .d{font-size:10.5px}
+.pt-p{font-size:12.5px;font-variant-numeric:tabular-nums}
+th{font-size:12px;font-weight:700}
+td.k{font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums}
+.lvl > span{font-size:12px}
+.chan-tag,.dtitle{font-size:11.5px}
+.chipx{font-size:11px;font-weight:600}
+.tkm,.res dl{font-size:11.5px;font-variant-numeric:tabular-nums}
+.fbox .sm,.fexit{font-size:11.5px}
+.stt{font-size:11px}
+.rtl-cap{font-size:12px;font-weight:700}
+.ls-line-lab{font-size:11px;font-weight:700}
+
+/* 바이라인 · 한글 이름 자간 정리 */
+.byline{font-family:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.06em}
+
+/* ---------- 데모 안내 · 붉은 펜 화살표 ---------- */
+.pen-wrap{position:relative;padding-bottom:62px}
+.mark.pen{position:absolute;left:26px;top:36px;display:flex;align-items:flex-end;gap:0;white-space:nowrap;pointer-events:none}
+.mark.pen svg{position:static;left:auto;top:auto;width:66px;height:44px;flex:none}
+.mark.pen path{stroke-width:2.2}
+.pen-t{
+  font-family:"Noto Sans KR",sans-serif;font-size:28px;line-height:1;color:var(--red);
+  transform:rotate(-5deg) translateY(4px);display:inline-block;margin-left:-2px;
+}
+.js .mark.pen .pen-t{opacity:0;transition:opacity .35s ease .75s}
+.js .mark.pen.draw .pen-t{opacity:1}
+.pen-wrap.tried .mark.pen{display:none}
+@media (prefers-reduced-motion:reduce){ .js .mark.pen .pen-t{opacity:1;transition:none} }
+
+/* 사용자가 지정한 줄바꿈을 그대로 유지하도록 폭 제한 해제 */
+.lede.lede-br{max-width:none}
+
+/* 사용자 지정 줄바꿈 유지 (스토리) */
+.st p.br{max-width:none}
+
+/* 스토리 본문: 지정 줄바꿈이 데스크톱 폭(약 758px) 안에서 한 줄로 유지되도록 */
+.st p{font-size:14px}
+
+/* 사용자 지정 줄바꿈 유지 (상세 행 본문) */
+.rbody p.br{max-width:none}
+
+/* 상세 행 라벨: 긴 라벨(조치 N : …) 한 줄 유지 */
+@media (min-width:760px){ .row{grid-template-columns:168px minmax(0,1fr)} }
+.rlab{white-space:nowrap}
+
+/* 결과 수치: 한글·영문·숫자가 섞여도 한 글꼴로 */
+#ba-result .rc-v{font-family:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+
+/* 알리미 표: 변경된 날짜 */
+.chg{color:var(--red);font-weight:700}
+.chan-tw table{min-width:640px}
+
+/* 온보딩 단계: 지정 줄바꿈 유지 · 날짜 · 주석 */
+.obd-i p.br,.body.br{max-width:none}
+.obd-d{font-size:12.5px;color:var(--muted)}
+.obd-star{margin-top:8px;font-size:12.5px;color:var(--muted)}
+.obd-ul{margin-top:8px;font-size:14px}
+
+/* 노트: 지정 줄바꿈 유지 */
+.note.br{max-width:none}
+
+/* 02 해결 방안 목록 */
+.fix-i{border-left:2px solid var(--ink);padding-left:12px}
+.fix-i > b{display:block;font-size:14px;color:var(--ink);margin-bottom:4px}
+.fix-i .plist{font-size:13.5px;gap:4px}
+
+/* 표 셀 안 목록 */
+.cell-ul{margin:4px 0 0;padding-left:16px}
+.cell-ul li::marker{color:var(--faint)}
+
+/* 03 안내 인용바 · 근거 칸 */
+.ls-hint{margin-top:12px;font-size:13.5px;line-height:1.8;color:var(--ink-2);border-left:2px solid var(--red);padding-left:12px;max-width:none}
+.ls-why:empty{display:none}
+
+/* 부록 산출물: 지정 줄바꿈이 꺾이지 않도록 한 열로 */
+@media (min-width:720px){ .arc{grid-template-columns:1fr} }
+.ai p.br{max-width:none}
+
+/* 툴팁: 줄바꿈이 꺾이지 않도록 폭 확장 */
+#tipbox{width:max-content;max-width:min(360px, calc(100vw - 20px))}
+
+/* ============================================================
+   CLEAN THEME (Smilegate 지원용)
+   레이아웃: 옅은 회색 바탕 위 흰 문서 한 장, 얇은 선과 한 가지 코발트 포인트
+   ============================================================ */
+:root{
+  --paper:#F4F5F7; --sheet:#FFFFFF; --sheet-2:#F3F5F8;
+  --ink:#15181F; --ink-2:#3E4553; --muted:#6B7280; --faint:#9CA3AF;
+  --rule:#E3E6EB; --rule-2:#EDEFF3; --grid:transparent; --grid-wk:transparent;
+  --red:#2450D8; --red-soft:#2450D812; --hl:#2450D822;
+  --lift:0 1px 2px rgba(21,24,31,.04), 0 12px 32px -18px rgba(21,24,31,.18);
+  --radius:14px;
+  --f-head:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
+  --f-body:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
+  --f-num:"Inter","Noto Sans KR",system-ui,sans-serif;
+  --f-code:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0D1015; --sheet:#141820; --sheet-2:#1A1F29;
+    --ink:#E8EBF1; --ink-2:#B4BBC8; --muted:#868E9D; --faint:#5F6776;
+    --rule:#272D38; --rule-2:#1F252F; --red:#86A2FF; --red-soft:#86A2FF1C; --hl:#86A2FF30;
+    --lift:0 1px 2px rgba(0,0,0,.4), 0 14px 32px -18px rgba(0,0,0,.85);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0D1015; --sheet:#141820; --sheet-2:#1A1F29;
+  --ink:#E8EBF1; --ink-2:#B4BBC8; --muted:#868E9D; --faint:#5F6776;
+  --rule:#272D38; --rule-2:#1F252F; --red:#86A2FF; --red-soft:#86A2FF1C; --hl:#86A2FF30;
+  --lift:0 1px 2px rgba(0,0,0,.4), 0 14px 32px -18px rgba(0,0,0,.85);
+  color-scheme:dark;
+}
+
+body{background:var(--paper);background-image:none;font-family:var(--f-body);font-size:15px;letter-spacing:-.005em;font-variant-numeric:tabular-nums}
+h1,h2,h3,h4{font-family:var(--f-head)}
+
+/* 문서 한 장 */
+.sheet{border:1px solid var(--rule);border-radius:20px;box-shadow:var(--lift);overflow:hidden}
+section{border-top:1px solid var(--rule-2)}
+@media (min-width:760px){ section{padding:72px 60px} }
+
+/* 목차 */
+.axis-cap{font-family:var(--f-num);letter-spacing:.08em}
+.ax .t{font-size:13px}
+.ax .d{font-family:var(--f-num);letter-spacing:.02em}
+.ax.on::before{height:2px;border-radius:2px}
+
+/* 히어로 */
+.byline{font-family:var(--f-num)}
+.hero h1{font-family:var(--f-head);font-weight:800;letter-spacing:-.035em;line-height:1.28}
+.pts-intro{font-weight:500}
+.points{border-top:1px solid var(--rule)}
+.pt{border-radius:12px}
+.pt:hover{background:var(--sheet-2)}
+.pt-n{font-family:var(--f-num);font-weight:700;letter-spacing:0}
+.pt-t{font-family:var(--f-head);font-weight:700;letter-spacing:-.02em}
+.pt-p{font-family:var(--f-num);font-size:12px;letter-spacing:0}
+
+/* 섹션 머리 */
+.shead{border-bottom:0;padding-bottom:0;margin-bottom:22px}
+.sno{font-family:var(--f-num);font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:none;margin-bottom:10px}
+.shead h2{font-weight:800;letter-spacing:-.03em;line-height:1.32;font-size:clamp(24px,3.1vw,32px)}
+.stamps{gap:6px}
+.stamp{font-family:var(--f-body);font-size:12px;font-weight:600;letter-spacing:0;border:0;background:var(--red-soft);color:var(--red);border-radius:999px;padding:5px 11px;margin:0}
+.lede{font-family:var(--f-body);font-size:16.5px;font-weight:400;line-height:1.8;color:var(--ink-2)}
+.dlead h3{font-family:var(--f-head);font-weight:700;letter-spacing:-.02em}
+.dlead h3::after{display:none}
+
+/* 빨간 펜 → 형광펜 하이라이트 */
+.mark svg{display:none}
+.mark{background:linear-gradient(transparent 60%, var(--hl) 60%);border-radius:2px;padding:0 .08em}
+.hero .mark{background:linear-gradient(transparent 64%, var(--hl) 64%)}
+.mark.pen{background:none;padding:0}
+.pen-t{font-family:var(--f-body);font-size:12.5px;font-weight:600;line-height:1;color:var(--red);background:var(--red-soft);border-radius:999px;padding:7px 12px;transform:none}
+.pen-t::before{content:"↑ "}
+
+/* 굵은 검은 테두리 → 얇은 선 + 둥근 카드 (상호작용 패널만) */
+.demo,.ff,.ls,.chan,.scene{border:1px solid var(--rule);border-radius:var(--radius);box-shadow:var(--lift);overflow:hidden}
+.tw,.strip,.years,.branch,.points,.story,.arc,.skg,.rgrid,.spec,.res,.tog,.ff-tabs,.ff-fix p,.act,.fix-i,.scene-why,.bcard{border-color:var(--rule)}
+.act{border-left-color:var(--red)}
+.tw{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.lv-box{border-color:var(--rule);border-radius:4px}
+.tile{border-radius:12px}
+.btn{border-radius:8px}
+.nextcta{border-radius:12px}
+details.more > summary{font-family:var(--f-head);font-weight:700;letter-spacing:-.01em}
+.more-hint{font-family:var(--f-body);letter-spacing:0}
+code,.jql{font-family:var(--f-code)}
+
+/* 라벨류 숫자 서체 정리 */
+.rlab,.rc-k,.skg-h,.st-k,.aik,.scene-qk,.scene-wk,.bh,.ltag,.cz{letter-spacing:0}
+.rc-v{font-family:var(--f-num);letter-spacing:-.02em}
+.ynum{font-family:var(--f-num);letter-spacing:-.03em}
+.ydesc{font-family:var(--f-head);font-weight:700}
+.foot .nm{font-family:var(--f-head);font-weight:800}
+.foot .mt{font-family:var(--f-num);letter-spacing:0}
+
+@media print{
+  body{background:#fff}
+  .sheet{border:0;border-radius:0;box-shadow:none}
+}
+
+</style>
+
+<script>document.documentElement.className += " js";</script>
+
+<div class="wrap">
+
+<!-- ============ INDEX ============ -->
+<nav class="axis" aria-label="목차">
+  <div class="axis-inner">
+    <span class="axis-cap">Index</span>
+    <a class="ax on" href="#intro"><span class="t">구조에서 찾습니다</span><span class="d">Intro</span></a>
+    <a class="ax" href="#featured"><span class="t">대표 사례</span><span class="d">출근 버튼에 Jira</span></a>
+    <a class="ax" href="#p1"><span class="t">01 일정 관리</span><span class="d">일정 변동 사전 감지</span></a>
+    <a class="ax" href="#p2"><span class="t">02 부서 간 협업</span><span class="d">R&amp;R 재설계</span></a>
+    <a class="ax" href="#p3"><span class="t">03 외부 업체 관리</span><span class="d">출시일에서 역산</span></a>
+    <a class="ax" href="#appendix"><span class="t">부록</span><span class="d">산출물 · 툴</span></a>
+    <div class="axis-foot">NEOPLE · PM<br>2024.03 – 현재</div>
+  </div>
+</nav>
+
+<main>
+<div class="sheet">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="intro">
+  <div class="hero-in">
+    <div class="byline">
+      <span>최지은 · Jieun Choi</span>
+      <span>Project Manager · Portfolio</span>
+    </div>
+
+    <h1><span class="ln">일정이 지켜지지 않는 이유를</span><br>사람이 아니라<br><span class="keep"><span class="mark hero">구조<svg viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true"><path d="M60 6 C24 5, 6 18, 8 31 C10 45, 40 55, 68 53 C98 51, 116 39, 113 26 C110 13, 88 5, 56 7" /></svg></span>에서 찾습니다.</span></h1>
+
+    <p class="pts-intro">각 상황을 꼼꼼히 분석하여 구조적으로 해결합니다.</p>
+    <div class="points">
+      <a class="pt" href="#p1">
+        <span class="pt-n">01</span>
+        <span class="pt-b">
+          <span class="pt-t">개발 진행 일정 관리</span>
+          <span class="pt-c">보이지 않던 일정 변경이, 자연스럽게 공유되는 환경을 만듭니다.</span>
+          <span class="pt-p">놓치는 일감 0건 · 일정 F/U 2h → 15m · Structure 정착</span>
+        </span>
+        <span class="pt-go" aria-hidden="true">→</span>
+      </a>
+      <a class="pt" href="#p2">
+        <span class="pt-n">02</span>
+        <span class="pt-b">
+          <span class="pt-t">부서 간 협업 지원</span>
+          <span class="pt-c">부서 사이에서 일이 막히는 지점을 찾아, 누가 무엇을 언제 전달할지 다시 정합니다.</span>
+          <span class="pt-p">일정 지연 F/U → 니즈·요청 부서 불일치 발견 → 요청 주체와 논의 자리 재설계</span>
+        </span>
+        <span class="pt-go" aria-hidden="true">→</span>
+      </a>
+      <a class="pt" href="#p3">
+        <span class="pt-n">03</span>
+        <span class="pt-b">
+          <span class="pt-t">외부 업체 진행 관리</span>
+          <span class="pt-c">출시일에서 역산해 외주 업체의 수량·기간·데드라인을 확정하고, 그 계획대로 운영합니다.</span>
+          <span class="pt-p">오픈스펙 산정 → 외주 전환 제안 → 외주 플래닝 → 운영 · 인력 재배치</span>
+        </span>
+        <span class="pt-go" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED ============ -->
+<section id="featured" class="rv">
+  <div class="shead">
+    <div>
+      <span class="sno">★ 대표 사례</span>
+      <h2>오류 일감을 없애고자,<br>출퇴근 시스템에 Jira를 연동했습니다</h2>
+    </div>
+    <div class="stamps">
+      <span class="stamp">일감 관리</span><span class="stamp">프로세스 안착</span><span class="stamp">보안검수 통과 · 파일럿 운영 중</span>
+    </div>
+  </div>
+
+  <p class="lede lede-br">
+    “Jira 일감 업데이트 해주세요.”라고 반복하는 대신, 모두가 매일 누르는 버튼에 Jira를 넣었습니다.<br>
+    채팅 리마인더에서 시작해 출퇴근 감지 툴인 <b>Jira Plus</b>까지 만들었습니다.
+  </p>
+
+  <div class="hook">
+    <div class="dlead">
+      <h3>직접 조작해 보세요.</h3>
+      <p>
+        실제 개발한 도구를 간단 재현한 데모입니다.<br>
+        툴 로그인 시 PAT(Personal Access Token) 값을 받아옵니다.<br>
+        출/퇴근 시 원버튼으로 Task의 상태를 변경할 수 있습니다.<br>
+        데이터는 예시로 대체했습니다.
+      </p>
+    </div>
+    <div class="demo">
+      <div class="dhead">
+        <span class="dtitle">Switch · 출퇴근 연동 데모</span>
+        <span style="display:flex;gap:8px;align-items:center">
+          <span class="chipx" id="stateChip">대기</span>
+          <button class="btn sm" id="resetBtn" type="button">초기화</button>
+        </span>
+      </div>
+      <div class="dbody">
+        <div id="idleView">
+          <p class="body" style="margin-bottom:20px">구성원이 아침에 누르는 버튼은 원래 하나뿐이었습니다. 여기에 일감 점검을 얹었습니다.</p>
+          <div class="pen-wrap" id="penWrap">
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn solid" id="inBtn" type="button">출근하기</button>
+              <button class="btn" id="outBtn" type="button">퇴근하기</button>
+            </div>
+            <span class="mark pen" aria-hidden="true"><svg viewBox="0 0 90 60"><path d="M74 54 C58 50, 32 42, 23 9 M13 19 L23 6 L33 17" /></svg><span class="pen-t">눌러보세요!</span></span>
+          </div>
+        </div>
+        <div id="feedView" style="display:none">
+          <div class="bot">
+            <div class="bav">SK</div>
+            <div>
+              <div class="bname">자동화 봇 <span>앱</span></div>
+              <div class="bcard" id="botCard">
+                <div class="bhd" id="botHead">Jira 시작 일감 리마인더</div>
+                <div id="tkList"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lock" id="lockView">
+          <div class="lbox">
+            <div class="ltag">차단됨 · 처리 전까지 작업 불가</div>
+            <h4>기한이 지난 일감이 1건 있습니다</h4>
+            <p>종료일이 지났는데 상태가 ‘열림’인 일감이 남아 있습니다. 처리해야 화면이 해제됩니다. 해제 비용은 버튼 한 번입니다.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn solid" data-clear="done" type="button">작업 완료</button>
+              <button class="btn red" data-clear="post" type="button">기한 연장</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="story">
+    <div class="st">
+      <span class="st-k">문제</span>
+      <p class="br">영업일 22시 기준, 오늘이 완료일인데 아직 작업중인 일감이 <b class="mark">75건<svg viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true"><path d="M62 7 C26 6, 7 19, 9 32 C11 46, 41 56, 69 54 C99 52, 115 40, 112 27 C109 14, 87 6, 57 8" /></svg></b>이었습니다.<br>
+      이 일감들은 내일이면 모두 오류 일감이 되어 Jira 일정의 신뢰도를 떨어뜨립니다.</p>
+    </div>
+    <div class="st">
+      <span class="st-k">조치</span>
+      <p class="br">일감 관리에 대한 인터뷰를 진행했고, 대다수의 답변이 Jira에 접속해 내 일감을 확인하는 게 번거롭다는 반응이었습니다.<br>
+      편의성 개선을 위해 봇이 각 담당자에게 메신저로 체크해야 할 일감과 원버튼 상태 변경을 보내는 기능을 지원했습니다.<br>
+      하지만 30%의 절감밖에 체감하지 못했습니다.<br>
+      그래서 사람들이 볼 수밖에 없는 출퇴근 앱에 결합했고, 배포 전 보안 이슈는 본부장님 설득과 CERT팀 협의로 풀었습니다.</p>
+    </div>
+    <div class="st">
+      <span class="st-k">결과</span>
+      <p class="br">PM에게 필요한 강제성과 사용자에게 필요한 편의성을 함께 담은 <b>Jira Plus</b>로 발전시켜,<br>
+      보안검수를 통과해 현재 프로젝트 내 파일럿을 운영하고 있습니다.</p>
+    </div>
+  </div>
+
+  <details class="more">
+    <summary><span>과정 자세히 보기</span><span class="more-hint">8단계 · 사용자 Flow</span></summary>
+    <div class="more-body">
+
+      <div class="rows">
+        <div class="row">
+          <div class="rlab"><span class="n">문제</span></div>
+          <div class="rbody">
+            <h4>오류 일감은 일감의 갱신을 놓쳐서 생깁니다.</h4>
+            <p>프로젝트에서 정의하는 오류 일감은 3가지입니다.</p>
+            <ul>
+              <li>시작일이 지났는데 시작하지 않은 일감</li>
+              <li>종료일이 지났는데 종료되지 않은 일감</li>
+              <li>종료일이 미래인 일감</li>
+            </ul>
+            <p class="br" style="margin-top:10px">위 3가지 케이스 모두 날짜 혹은 상태를 갱신해주면 해결되는 문제입니다.<br>
+            하지만 작업자는 Jira 진입조차 어려워합니다.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="rlab"><span class="n">조치 1</span>: 편의성 제공</div>
+          <div class="rbody">
+            <h4>Jira를 열지 않고도 상태를 바꿀 수 있게 했습니다</h4>
+            <p class="br">매일 당일 기준으로 시작 일감 / 종료 일감 / 오류 일감을 조회해<br>
+            출/퇴근 시간에 맞춰 Teams DM으로 발송하도록 자동화 봇을 도입했습니다.<br>
+            메시지 안에서 ‘작업 완료’·‘날짜 변경’을 원버튼으로 처리하도록 제공했습니다.</p>
+          </div>
+        </div>
+        <div class="row key">
+          <div class="rlab"><span class="n">검증</span>가설 실패</div>
+          <div class="rbody">
+            <h4>30%는 줄었지만, 70%가 남았습니다</h4>
+            <p class="br">오류 일감은 30% 감소했지만 여전히 70%가 남아 있습니다.<br>
+            편의성은 작업자들이 일감 관리를 하게 하기 위한 필요조건이지 충분조건이 아니라는 것을 깨달았습니다.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="rlab"><span class="n">조치 2</span>: 구조적 개선</div>
+          <div class="rbody">
+            <h4>새로운 루틴을 학습시키지 않고, 필수 루틴에 기대었습니다.</h4>
+            <p>전체 구성원이 반드시 누르는 출퇴근 앱에 연동했습니다.</p>
+            <ul>
+              <li>출근 버튼 클릭 시, 오늘 시작할 일감을 팝업으로 띄우고, 퇴근 버튼을 누르면 오늘 종료할 일감을 띄워줍니다.</li>
+              <li>오류 일감은 가장 먼저 없앨 수 있도록 모든 팝업 전에 조회되도록 설계했습니다.</li>
+            </ul>
+            <p class="br" style="margin-top:10px">팝업 설정을 통해 일감 처리 전까지 화면 조작이 안 되도록 하는 기능도 추가했습니다.<br>
+            결과적으로 오류 일감이 <b class="mark u">0에 수렴하는 구조<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 11 C52 4, 128 4, 195 9" /></svg></b>가 됩니다.</p>
+          </div>
+        </div>
+        <div class="row key">
+          <div class="rlab">배포 방안 문제</div>
+          <div class="rbody">
+            <h4>개별로 배포하면 빈틈이 생깁니다.</h4>
+            <p class="br">실 단위 배포 시, 구성원이 각자 앱을 내려받아야 합니다.<br>
+            거부감을 최대한 줄여야 하는 일정 관리 앱의 경우, 이조차도 문제가 될 수 있습니다.<br>
+            이 문제를 해결할 수 있는 것은 C레벨의 의지와 전사 차원의 설치라고 생각했습니다.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="rlab"><span class="n">조치 3</span>: 니즈 기반 설득</div>
+          <div class="rbody">
+            <h4>프로젝트 → PM실 → 전사 배포</h4>
+            <p class="br">팀장님의 컨펌 하에 실장님께 브리핑을 드렸습니다.<br>
+            개별 설치를 거치지 않고 조직 전체에 한 번에 닿는 경로를 확보하기 위해,<br>
+            PM실의 니즈와 Jira Plus를 연결 지어 전사 배포를 제안했습니다.</p>
+          </div>
+        </div>
+        <div class="row key">
+          <div class="rlab"><span class="n">조치 4</span>: 보안 이슈 해결</div>
+          <div class="rbody">
+            <h4>보안검수를 넘을 수 있도록 논의를 이끌었습니다.</h4>
+            <p class="br">배포 전 보안 이슈가 확인되었습니다.<br>
+            팀장님과 함께 본부장님을 설득해, CERT팀이 우호적으로 검토할 수 있도록 논의를 이끌었습니다.<br>
+            그 결과 보안검수를 모두 통과했습니다.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="rlab"><span class="n">결론</span>: Jira Plus</div>
+          <div class="rbody">
+            <h4>강제성과 편의성을 한 도구에 담다</h4>
+            <p class="br">긍정적 답변과 함께 PM실에서 테스트를 완료했습니다.<br>
+            피드백까지 반영해 추가 수정을 진행했고, 직접 개발했습니다.<br>
+            현재 프로젝트 내 파일럿을 운영하고 있습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="note red" style="margin-bottom:22px"><b>직접 작성한 기능 기획서 · 사용자 Flow</b></p>
+        <div class="flow">
+          <div class="frow"><div class="fbox">시작<span class="sm">스케줄러 · 매일 18:00</span></div><div></div></div>
+          <div class="frow"><div class="fconn"></div><div></div></div>
+          <div class="frow"><div class="fbox dec">오늘이 영업일인가?<span class="sm">주말 · 공휴일 체크</span></div><div class="fexit">아니오<br>→ 종료</div></div>
+          <div class="frow"><div class="fconn"></div><div></div></div>
+          <div class="frow"><div class="fbox"><b>Jira JQL 조회</b><code class="jql">project = &lt;프로젝트&gt; AND issuetype = 작업
+AND assignee = currentUser()
+AND status in (작업중, open)
+AND 종료일 = endOfDay()</code></div><div></div></div>
+          <div class="frow"><div class="fconn"></div><div></div></div>
+          <div class="frow"><div class="fbox">담당자(assignee)별 그룹핑</div><div></div></div>
+          <div class="frow"><div class="fconn"></div><div></div></div>
+          <div class="frow"><div class="fbox dec">해당 담당자에게 마감 이슈가 있는가?</div><div class="fexit">0건<br>→ 미발송</div></div>
+          <div class="frow"><div class="fconn"></div><div></div></div>
+          <div class="frow"><div class="fbox acc"><b>Adaptive Card 생성 → 사용자 DM 발송</b><span class="sm">Teams ID = Jira ID 매핑 · 버튼 클릭까지 대기</span></div><div></div></div>
+        </div>
+        <div class="branch">
+          <div class="bcol">
+            <div class="bh">분기 A · <b>완료</b></div>
+            <ol>
+              <li>담당자가 카드에서 완료 보고</li>
+              <li>실행 봇이 Status를 ‘작업완료’로 전환</li>
+              <li>결과 카드 전송 · <b>기존 버튼 비활성화</b></li>
+            </ol>
+          </div>
+          <div class="bcol">
+            <div class="bh">분기 B · <b>지연</b></div>
+            <ol>
+              <li>담당자가 카드에서 지연 보고</li>
+              <li>실행 봇이 duedate를 <b>다음 영업일</b>로 변경 (주말·공휴일 건너뜀)</li>
+              <li>기존/변경 마감일·처리 시각과 함께 결과 카드 전송, Jira 코멘트 자동 추가</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </details>
+</section>
+
+<!-- ============ 01 일감·일정 관리 ============ -->
+<section id="p1" class="rv">
+  <div class="shead">
+    <div>
+      <span class="sno">01 — 개발 진행 일정 관리</span>
+      <h2>일정 변동을 사전에 찾아내<br>관리할 수 있는 환경을 만듭니다</h2>
+    </div>
+    <div class="stamps"><span class="stamp">일정 관리</span><span class="stamp">대내외 커뮤니케이션</span></div>
+  </div>
+
+  <p class="lede">200명 규모의 프로젝트에서 일정 변동을 쉽게 추적하고,<br>드라이하게 전달 가능하도록 구조를 바꿨습니다.</p>
+
+  <div class="hook">
+    <div class="tog" role="tablist" data-reveal="p1">
+      <button type="button" class="on" data-ba="before" role="tab" aria-selected="true">Before</button>
+      <button type="button" class="tab-next" data-ba="analysis" role="tab" aria-selected="false">문제 분석 <span aria-hidden="true">→</span></button>
+      <button type="button" class="tab-next" data-ba="action" role="tab" aria-selected="false">조치 <span aria-hidden="true">→</span></button>
+      <button type="button" class="tab-goal" data-ba="result" role="tab" aria-selected="false">결과</button>
+    </div>
+
+    <div class="pane on" id="ba-before">
+      <h4 class="pane-h">반복되던 상황</h4>
+      <ul class="plist">
+        <li>공유 없이, 후행 프로세스를 고려하지 않은 일정 변경이 반복됨</li>
+        <li>후행 부서 작업 직전에야 선행 작업이 끝나지 않았음을 확인해 <b>일정 손실</b> 발생</li>
+        <li>리더 간 구두로 합의한 일정이 Jira에 반영되지 않아 F/U가 어려움</li>
+        <li>이를 막기 위한 F/U에 PM이 <b>일 평균 2시간</b> 소요</li>
+      </ul>
+      <button type="button" class="nextcta" data-go="p1" data-target='[data-ba="analysis"]'>원인을 이렇게 분석했습니다 <b>문제 분석 보기 →</b></button>
+    </div>
+
+    <div class="pane" id="ba-analysis">
+      <h4 class="pane-h">문제 분석</h4>
+      <div class="qa">
+        <div class="qa-q">일정 변경을 왜 늦게 알게 되는가?</div>
+        <ul class="plist">
+          <li><span class="cz">원인 1</span>일정 변동을 공유하거나 감지할 <b>소통 창구가 없었음</b></li>
+          <li><span class="cz">원인 2</span>일정 변경이 <b>후행 부서 일정에 영향</b>을 준다는 인식이 낮았음</li>
+        </ul>
+      </div>
+      <div class="qa">
+        <div class="qa-q">구두로 합의한 일정은 어디에 기록되는가?</div>
+        <ul class="plist">
+          <li><span class="cz">원인 3</span>Jira에 익숙하지 않은 리더들이 <b>엑셀·Outlook</b> 등으로 일정을 조정하고 있었음</li>
+        </ul>
+      </div>
+      <button type="button" class="nextcta" data-go="p1" data-target='[data-ba="action"]'>그래서 이렇게 바꿨습니다 <b>조치 보기 →</b></button>
+    </div>
+
+    <div class="pane" id="ba-action">
+      <h4 class="pane-h">조치</h4>
+      <div class="acts">
+        <div class="act">
+          <div class="act-h"><span class="cz">원인 1</span>변경 일감 알리미</div>
+          <ul class="plist">
+            <li>전날 변경된 일감을 <b>매일 11시 자동으로 알리는</b> 알리미를 만들고, 유관 부서 리더를 모아 채널 개설</li>
+            <li>봇이 드라이하게 변동을 알려, 리더끼리 <b>쉽게 확인하고 질문</b>할 수 있는 환경 제공</li>
+          </ul>
+        </div>
+        <div class="act">
+          <div class="act-h"><span class="cz">원인 2</span>Jira Link · Automation</div>
+          <ul class="plist">
+            <li>FS-Link로 프로세스를 연결하고, <b>선행 일감이 후행 부서 일감을 침범하면 알림</b>이 가도록 자동화</li>
+          </ul>
+        </div>
+        <div class="act">
+          <div class="act-h"><span class="cz">원인 3</span>Jira Structure 가이드</div>
+          <ul class="plist">
+            <li>공식 일정 관리 툴인 Structure를 쓰지 않던 <b>리더 대상 인터뷰</b></li>
+            <li>인터뷰 내용을 바탕으로 Structure 개선 및 가이드 제공</li>
+            <li>일정 관련 소통을 모두 Structure로 진행하며 익숙해지도록 온보딩</li>
+          </ul>
+        </div>
+      </div>
+      <button type="button" class="nextcta" data-go="p1" data-target='[data-ba="result"]'>그래서 이렇게 달라졌습니다 <b>결과 보기 →</b></button>
+    </div>
+
+    <div class="pane" id="ba-result">
+      <h4 class="pane-h">결과</h4>
+      <div class="rgrid">
+        <div class="rcell">
+          <span class="rc-k">놓치는 일감</span>
+          <span class="rc-v">0<small>건</small></span>
+          <span class="rc-d">마일스톤 기준, F/U에서 놓친 주요 일감</span>
+        </div>
+        <div class="rcell">
+          <span class="rc-k">일정 F/U 시간</span>
+          <span class="rc-v">2h <i>→</i> 15m</span>
+          <span class="rc-d">일정 이슈 F/U에 쓰는 시간 (일 평균)</span>
+        </div>
+        <div class="rcell">
+          <span class="rc-k">Structure</span>
+          <span class="rc-v">사용 정착</span>
+          <span class="rc-d">엑셀·Outlook 대신 공식 일정 툴로 관리</span>
+        </div>
+        <div class="rcell">
+          <span class="rc-k">소통 방식</span>
+          <span class="rc-v">Jira 기반</span>
+          <span class="rc-d">구두 합의 대신 일감 링크로 확인하고 기록</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <details class="more">
+    <summary><span>과정 자세히 보기</span><span class="more-hint">알리미 채널 · FS-Link 자동화 · 그래픽 7개 팀 Structure 온보딩 · Structure 조율 사례</span></summary>
+    <div class="more-body">
+
+      <!-- 1. 변경 일감 알리미 -->
+      <div>
+        <p class="note red" style="margin-bottom:18px"><b>1. 변경 일감 알리미 채널</b></p>
+        <div class="rows">
+          <div class="row">
+            <div class="rlab">발송 조건</div>
+            <div class="rbody">
+              <h4>전날 변경된 일감만, 매일 같은 시간에</h4>
+              <ul>
+                <li>매일 <b>오전 11시</b>, 전날 <b>시작일·종료일이 바뀐 일감</b>만 모아서 발송</li>
+                <li><b>생성 후 24시간이 지난 일감만</b> 대상으로 삼아, 새로 만든 일감의 첫 일정 세팅은 ‘변경’으로 잡히지 않게 했습니다</li>
+                <li>콘텐츠/유형 단위로 나눠 발송해, 리더가 자기 영역의 변동만 빠르게 훑을 수 있게 했습니다</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="rlab">채널 구성</div>
+            <div class="rbody">
+              <p>제작 프로세스상 선·후행으로 엮인 <b>유관 부서 리더와 PM</b>을 한 채널에 모았습니다.
+              선행 부서의 변경이 올라오면, 영향을 받는 후행 부서 리더가 같은 자리에서 바로 봅니다.</p>
+            </div>
+          </div>
+          <div class="row key">
+            <div class="rlab">드라이하게</div>
+            <div class="rbody">
+              <h4>PM이 묻기 전에, 봇이 먼저 알립니다</h4>
+              <p class="br">일정이 바뀔 때마다 PM이 개별로 “왜 바뀌었나요?”를 물으면 추궁처럼 느껴집니다.<br>
+              봇이 사실만 전달하고, 궁금한 사람이 스레드에서 묻고, 담당 리더가 답합니다.<br>
+              자연스러운 흐름으로 만들어 감정 소모 없이 변동과 그 이유가 함께 기록되게 했습니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chan" aria-label="알리미 채널 재현">
+          <div class="chan-head"><span class="chan-name">[몬스터] 일정 변경 공유방</span><span class="chan-tag">예시 데이터로 재현</span></div>
+          <div class="chan-msg">
+            <div class="bav">SK</div>
+            <div class="chan-body">
+              <div class="bname">자동화 봇 <span>앱</span> <em>오전 11:00</em></div>
+              <div class="chan-t">레전더리 몬스터 B 일감 중, 시작일/종료일 변경 일감 안내</div>
+              <div class="chan-s">총 2개 이슈의 시작일/종료일이 변경되었습니다.</div>
+              <div class="tw chan-tw">
+                <table>
+                  <thead><tr><th style="width:72px">키</th><th>요약</th><th style="width:50px">상태</th><th style="width:62px">담당자</th><th style="width:170px">시작일</th><th style="width:170px">종료일</th></tr></thead>
+                  <tbody>
+                    <tr><td class="k">PM-1818</td><td>이펙트 : 레전더리 몬스터 B : 비주얼 기획</td><td>열림</td><td>이펙터 A</td><td class="k">2026-08-04</td><td class="k">2026-08-06 → <span class="chg">2026-08-08</span></td></tr>
+                    <tr><td class="k">PM-1466</td><td>이펙트 : 레전더리 몬스터 B : 정식 메쉬 FX 제작</td><td>열림</td><td>이펙터 A</td><td class="k">2026-08-07 → <span class="chg">2026-08-11</span></td><td class="k">2026-08-20 → <span class="chg">2026-08-22</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="chan-f">(24시간 이내 일정 변경, 생성 24시간 이상 경과된 일감 대상)</div>
+
+              <div class="thr">
+                <div class="thr-cap">댓글 2개</div>
+                <div class="thr-i">
+                  <div class="bav pm">PM</div>
+                  <div><div class="bname">최지은 <em>다음 날 오후 2:52</em></div>
+                  <p><span class="at">@이펙트 리더</span> 님~ 몬스터 B 이펙트 제작 일정과 폴리싱 일정의 <b>WD 2일이 겹칩니다.</b></p></div>
+                </div>
+                <div class="thr-i">
+                  <div class="bav ld">FX</div>
+                  <div><div class="bname">이펙트 리더 <em>오후 5:24</em></div>
+                  <p>넵. 담당자의 추가 일정 때문에 변경되었습니다. 몬스터 기획과 이야기된 내용입니다. <span class="at">@몬스터 팀장</span> <span class="at">@최지은</span></p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="note" style="margin-top:12px">실제 채널을 재현한 장면입니다.</p>
+      </div>
+
+      <!-- 2. FS-Link · Automation -->
+      <div>
+        <p class="note red" style="margin-bottom:18px"><b>2. Jira Link · Automation 제공</b></p>
+        <div class="rows">
+          <div class="row">
+            <div class="rlab">신규 기능 도입</div>
+            <div class="rbody">
+              <p class="br">변경 일감 채널로 인해 프로세스에 대한 인식이 올라오면서,<br>
+              일감 변경 시, 후행 부서의 일감을 알고 싶다는 니즈가 생기기 시작했습니다.<br>
+              적절한 시점에 도입을 준비 중이었던 일감 연결 기능을 Automation과 제공했습니다.<br>
+              리더는 적극적으로 기능을 사용했고, PM은 일감 패트롤이 더 쉬워졌습니다.</p>
+            </div>
+          </div>
+          <div class="row key">
+            <div class="rlab">제공 기능</div>
+            <div class="rbody">
+              <ul>
+                <li><b>규칙</b> : 컨셉기획 → 원화 → 모델링 → 애니 → 이펙트 → 정식조립처럼 이어지는 일감을 FS(Finish-to-Start) 링크로 연결되도록 규칙 안내</li>
+                <li><b>Automation</b> : 선행이 밀려 후행 일정을 넘으면, 선/후행 부서의 보고자에게 자동으로 알립니다</li>
+                <li><b>가이드</b> : 위 내용을 문서화하여 제공했습니다.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Structure 온보딩 -->
+      <div>
+        <p class="note red" style="margin-bottom:18px"><b>3. 그래픽 7개 팀 Jira Structure 온보딩</b></p>
+        <p class="body br" style="margin-bottom:18px">
+          Jira 일감 관리의 사각지대인 그래픽 직군 리더 인터뷰를 진행했습니다.<br>
+          리더들이 팀마다 각기 다른 일정관리 툴을 사용하니, 각 팀의 일정이 공유되지 않았습니다.<br>
+          툴을 쓰라고 공지하는 대신, 직군마다 실제로 보고 싶은 화면을 Structure에 팀별로 옮겨 주었습니다.
+        </p>
+
+        <div class="obd">
+          <div class="obd-i">
+            <span class="obd-n">01</span>
+            <div>
+              <h4>진단 · 누가 왜 안 쓰는가</h4>
+              <p class="br">Structure를 쓰지 않는 리더를 추려, 대신 무엇으로 일정을 관리하는지 확인했습니다.<br>
+              대부분 엑셀/컨플루언스 문서였습니다.<br>
+              이유는 “Jira 화면이 우리 팀이 보는 방식과 다르다”에 가까웠습니다.<br>
+              도구의 문제가 아닌 뷰어의 문제로 정의했습니다.</p>
+            </div>
+          </div>
+          <div class="obd-i">
+            <span class="obd-n">02</span>
+            <div>
+              <h4>인터뷰 · 팀별 니즈 취합</h4>
+              <p class="br">원화 / 모델링 / 애니 / 이펙트 / 배경 / 연출 / 라이팅<br>
+              각 팀이 일정을 볼 때 어떤 단위로 묶고, 어떤 순서로 훑고, 무엇을 먼저 확인하는지 확인했습니다.<br>
+              <span class="obd-d">(2025.06)</span></p>
+            </div>
+          </div>
+          <div class="obd-i">
+            <span class="obd-n">03</span>
+            <div>
+              <h4>제공 · 팀별 커스터마이징 Structure</h4>
+              <p class="br">니즈에 따라 Structure를 제공했고, 원하는 필터부터 기본적인 사용법 세미나를 진행했습니다.<br>
+              세미나를 준비하며 Structure 사용 가이드를 만들어 배포했습니다.<br>
+              세미나 이후에도 휘발되지 않을 수 있도록 기준을 문서로 남겼습니다.<br>
+              <span class="obd-d">(2025.07)</span></p>
+            </div>
+          </div>
+          <div class="obd-i key">
+            <span class="obd-n">04</span>
+            <div>
+              <h4>습관화 · 일정 이야기는 Structure 화면으로</h4>
+              <p class="br">가이드만으로는 습관이 바뀌지 않아서, 일정 관련 소통은 모두 Structure 화면을 띄워 놓고 진행했습니다.<br>
+              엑셀 파일 대신 Structure 링크로 대화하다 보니, 리더들이 자연스럽게 Structure를 열어 확인하게 됐습니다.</p>
+              <p class="obd-star">*실제로 Structure 화면을 두고 모델링 일정을 재배치한 장면을 넣었습니다.</p>
+            </div>
+          </div>
+          <div class="obd-i">
+            <span class="obd-n">05</span>
+            <div>
+              <h4>사용성 인터뷰 · 2차 개선</h4>
+              <p class="br">실제로 쓰면서 불편했던 점을 다시 인터뷰해 뷰를 한 번 더 고쳤습니다.<br>
+              인터뷰 시, Link/SandBox 등 심화 기능에 대한 안내도 제공했습니다.<br>
+              <span class="obd-d">(2025.10)</span></p>
+            </div>
+          </div>
+          <div class="obd-i">
+            <span class="obd-n">06</span>
+            <div>
+              <h4>정착 · 사각지대가 사라짐</h4>
+              <p>모두 Jira를 기반으로 커뮤니케이션을 하다 보니, Jira의 일정이 가장 신뢰성이 있는 일정이 되었습니다.</p>
+              <ul class="plist obd-ul">
+                <li>PM의 일감 관리 공수도 일일 평균 2시간에서 15분으로 현저히 줄었고, 마일스톤 기준 일정 변경 F/U를 놓친 주요 일감이 0건으로 떨어졌습니다.</li>
+                <li>프로젝트의 소통 비용도 절감되었습니다.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="scene" aria-label="Structure 기반 일정 조율 재현">
+          <div class="chan-head"><span class="chan-name">Structure 기반 일정 조율</span><span class="chan-tag">예시 이름으로 재현</span></div>
+          <div class="scene-body">
+
+            <div class="scene-q">
+              <span class="scene-qk">상황</span>
+              <p>원화팀이 <b>캐릭터 A를 디자인 시안부터 표준일정으로 진행</b>하기로 하면서 원화 일감의 시작일·종료일이 조정됐고,
+              그 결과 <b>캐릭터 A 모델링이 NPC C 제작과 겹치게</b> 됐습니다. 일감 배치를 다시 해야 하는 상황이었습니다.</p>
+            </div>
+
+            <p class="scene-p"><b>제안</b> — 캐릭터 A 모델링 일정을 지키려면 NPC C 일정 조정이 필요했습니다. 먼저 모델러 A의 Structure를 공유했습니다.</p>
+
+            <div class="sq-card">
+              <div class="sq-owner">모델러 A</div>
+              <div class="tw sq-tw">
+                <table>
+                  <thead><tr><th>일감</th><th style="width:62px">상태</th><th style="width:40px">WD</th><th style="width:88px">시작일</th><th style="width:88px">종료일</th></tr></thead>
+                  <tbody>
+                    <tr><td><span class="sq">T</span>캐릭터모델링 : 캐릭터 B 진메쉬 모델링</td><td><span class="stt w">작업중</span></td><td class="k">47</td><td class="k">2026-02-23</td><td class="k">2026-04-28</td></tr>
+                    <tr><td><span class="sq">T</span>캐릭터모델링 : 캐릭터 B 기본 무기 모델링</td><td><span class="stt">열림</span></td><td class="k">10</td><td class="k">2026-04-29</td><td class="k">2026-05-12</td></tr>
+                    <tr class="hl"><td><span class="sq">T</span>캐릭터모델링 : NPC C EP</td><td><span class="stt">열림</span></td><td class="k">33</td><td class="k">2026-05-13</td><td class="k">2026-06-26</td></tr>
+                    <tr><td><span class="sq">T</span>캐릭터모델링 : 캐릭터 A 모델링</td><td><span class="stt">열림</span></td><td class="k">45</td><td class="k">2026-06-02</td><td class="k">2026-08-03</td></tr>
+                    <tr><td><span class="sq">T</span>캐릭터모델링 : 캐릭터 A 기본 무기 모델링</td><td><span class="stt">열림</span></td><td class="k">10</td><td class="k">2026-08-04</td><td class="k">2026-08-17</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="sq-note">NPC C가 캐릭터 A 모델링 앞을 막고 있음 · NPC C의 <b>애니 시작은 8/24</b> → 그 전까지만 완료되면 됨</div>
+            </div>
+
+            <p class="scene-p">NPC C를 <b>모델러 B의 몬스터 D·E 일정을 미루고 1차/2차로 나눠</b> 진행하는 안을 제안했습니다. 이어서 모델러 B의 Structure를 공유했습니다.</p>
+
+            <div class="sq-card">
+              <div class="sq-owner">모델러 B</div>
+              <div class="tw sq-tw">
+                <table>
+                  <thead><tr><th>일감</th><th style="width:62px">상태</th><th style="width:40px">WD</th><th style="width:88px">시작일</th><th style="width:88px">종료일</th></tr></thead>
+                  <tbody>
+                    <tr><td><span class="sq">T</span>캐릭터모델링 : 에픽 몬스터 F 2차</td><td><span class="stt w">작업중</span></td><td class="k">23</td><td class="k">2026-04-13</td><td class="k">2026-05-13</td></tr>
+                    <tr class="hl"><td><span class="sq">T</span>캐릭터모델링 : 몬스터 D</td><td><span class="stt">열림</span></td><td class="k">16</td><td class="k">2026-05-14</td><td class="k">2026-06-04</td></tr>
+                    <tr><td><span class="sq">T</span>캐릭터모델링 : 레전더리 몬스터 G</td><td><span class="stt">열림</span></td><td class="k">27</td><td class="k">2026-06-03</td><td class="k">2026-07-09</td></tr>
+                    <tr class="hl"><td><span class="sq">T</span>캐릭터모델링 : 몬스터 E</td><td><span class="stt">열림</span></td><td class="k">18</td><td class="k">2026-07-10</td><td class="k">2026-08-04</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="sq-note">두 몬스터 모두 <b>키 몬스터라 애니를 내부에서 처리</b>할 예정 → 애니 외주로 보낼 몬스터보다 일정 여유가 있음</div>
+            </div>
+
+            <div class="scene-why">
+              <div class="scene-wk">미뤄도 되는 근거 · 후행 애니 시작일에서 역산</div>
+              <ul class="plist">
+                <li><b>몬스터 D</b> — 원화 완료. 모델러 A가 5/13~6/1(WD 13) 사이에 진행 가능한지 확인 요청.
+                빠듯하면 <b>1차/2차 분할 · 다른 담당자 지정 · 외주</b> 모두 가능. 애니 키 모션은 <b>11/5 시작</b>.</li>
+                <li><b>몬스터 E</b> — 원화 완료. 외주로 처리하거나, 애니가 시작되는 <b>10/5 전에만</b> 완성되면 이슈 없음.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="note br" style="margin-top:12px">
+          모델링 팀장님과 나눈 실제 대화를 이름·콘텐츠명·일감 이미지만 바꿔 재현했습니다.<br>
+          “일정이 겹친다”에서 멈추지 않고, 담당자별 Structure로 앞뒤 일감을 보여주었습니다.<br>
+          후행 애니 시작일을 기준으로 어떤 일감이 밀려도 되는지와 대안(분할·재배정·외주)까지 함께 제시했습니다.
+        </p>
+      </div>
+
+
+    </div>
+  </details>
+</section>
+
+<!-- ============ 02 프로세스 개선 ============ -->
+<section id="p2" class="rv">
+  <div class="shead">
+    <div>
+      <span class="sno">02 — 부서 간 협업 · 프로세스 개선</span>
+      <h2>일회성 이슈 해결이 아닌,<br>반복되지 않는 구조를 만듭니다.</h2>
+    </div>
+    <div class="stamps"><span class="stamp">부서 간 협업</span><span class="stamp">프로세스 개선</span></div>
+  </div>
+
+  <p class="lede lede-br">
+    몬스터 스킬에 사용되는 프랍의 FX 일정의 지연을 감지했고,<br>
+    그 사유에 대해 추적하다가 프로세스의 문제를 발견했습니다.
+  </p>
+
+  <div class="hook">
+    <div class="dlead">
+      <h3>당시 프로세스에서 발견한 두 가지 문제</h3>
+      <p>몬스터 스킬에 쓰이는 프랍 제작 프로세스입니다.<br>
+      각 블록을 누르면 당시 제 생각의 흐름을 보실 수 있습니다.</p>
+    </div>
+
+    <div class="ff" id="ff">
+      <div class="ff-head" data-reveal="p2">
+        <div class="ff-tabs" role="tablist">
+          <button type="button" class="on" data-ffv="before" role="tab" aria-selected="true">개선 전</button>
+          <button type="button" class="tab-next" data-ffv="after" role="tab" aria-selected="false">개선 후 <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+
+      <div class="ff-view on" id="ffBefore">
+        <ol class="ff-steps">
+          <li><button type="button" class="ff-step" data-tag="출발점"
+            data-msg="니즈가 생기는 곳입니다.&#10;몬스터 스킬에 프랍이 필요하다는 판단은 몬스터 기획이 하는 게 맞습니다.">
+            <span class="ff-no">1</span><span class="ff-who">몬스터 기획</span><span class="ff-what">스킬에 쓸 프랍 니즈 발생</span></button></li>
+          <li><button type="button" class="ff-step" data-tag="갈림길"
+            data-msg="레벨에 몬스터 배치 시, 스킬 사용도 고려되어야 하기 때문에 실질적으로 문제가 되는 구간은 아닙니다.">
+            <span class="ff-no">2</span><span class="ff-who">레벨 기획</span><span class="ff-what">니즈를 전달받아 동기화</span></button></li>
+          <li><button type="button" class="ff-step is-bad" data-tag="원인 1"
+            data-msg="니즈는 몬스터 기획에 있는데, 요청서는 레벨 기획이 쓰고 있었습니다.&#10;실제로 요청서에 사이즈 명시가 누락됐었고, 책임 소재가 불분명합니다.">
+            <span class="ff-flag">원인 1</span><span class="ff-no">3</span><span class="ff-who">레벨 기획</span><span class="ff-what">프랍 리소스 요청서 작성</span></button></li>
+          <li><button type="button" class="ff-step is-bad" data-tag="원인 2"
+            data-msg="몬스터 스킬에 쓰일 프랍이 ‘레벨’ 브리핑에서 전달되고 있었습니다.&#10;몬스터 제작 쪽과 일정을 논의하여 스킬 프랍 제작 시점을 맞춰야 하지만,&#10;스킬 프랍을 제작하는 배경 그래픽팀과 스킬 프랍이 필요한 몬스터 애니-이펙트 팀 간 논의할 기회가 프로세스상 존재하지 않습니다.">
+            <span class="ff-flag">원인 2</span><span class="ff-no">4</span><span class="ff-who">레벨 상세 브리핑</span><span class="ff-what">몬스터 스킬 프랍까지 포함된 프랍 제작 요청서를 배경 그래픽팀에 전달</span></button></li>
+          <li><button type="button" class="ff-step" data-tag="드러난 곳"
+            data-msg="몬스터 기획의 의도와는 다른 프랍이 제작되었습니다.&#10;니즈대로 제작되지 않은 리소스가 완성 직전 감지된 구간입니다.">
+            <span class="ff-no">5</span><span class="ff-who">그래픽 제작</span><span class="ff-what">애니·이펙트까지 끝난 뒤 기획이 확인</span></button></li>
+        </ol>
+        <button type="button" class="ff-step ff-edge" data-tag="예상되는 이슈 사항"
+          data-msg="레벨 담당자가 아직 없는 몬스터의 경우, 몬스터 스킬 프랍의 요청서를 쓸 사람도, 브리핑할 자리도 없습니다.">
+          <span class="ff-no">+</span><span class="ff-who">예상되는 이슈 사항</span><span class="ff-what">레벨 담당자가 아직 정해지지 않은 몬스터라면?</span></button>
+        <div class="ff-msg" id="ffMsg" aria-live="polite">빨간 블록의 단계를 문제 지점으로 판단했습니다.<br>클릭 시, 이유를 확인할 수 있습니다.</div>
+        <button type="button" class="nextcta" data-go="p2" data-target='[data-ffv="after"]'>두 원인을 어떻게 고쳤는지 <b>개선 후 보기 →</b></button>
+      </div>
+
+      <div class="ff-view" id="ffAfter">
+        <ol class="ff-steps after">
+          <li><div class="ff-step is-ok"><span class="ff-no">1</span><span class="ff-who">몬스터 전투 컨셉 브리핑</span><span class="ff-what">프랍 사용 여부 확정 · 배경 그래픽 리더 사전 노티</span></div></li>
+          <li><div class="ff-step is-fix"><span class="ff-no">2</span><span class="ff-who">몬스터 기획</span><span class="ff-what">프랍 문서를 직접 작성</span></div></li>
+          <li><div class="ff-step is-ok"><span class="ff-no">3</span><span class="ff-who">몬스터 상세 브리핑</span><span class="ff-what">배경 그래픽 리더 참석 · 서면으로 충분하면 생략</span></div></li>
+          <li><div class="ff-step is-fix"><span class="ff-no">4</span><span class="ff-who">일정 확인</span><span class="ff-what">몬스터 조립·완료 시점 기준으로 논의</span></div></li>
+          <li><div class="ff-step is-ok"><span class="ff-no">5</span><span class="ff-who">제작 완료</span><span class="ff-what">레벨 기획에 조립 지원 요청 → 최종 조립까지 F/U</span></div></li>
+        </ol>
+        <div class="ff-fix">
+          <div class="fix-i">
+            <b>원인 1 해결 방안 : 2단계</b>
+            <ul class="plist">
+              <li>니즈를 가진 몬스터 기획이 문서를 작성합니다.</li>
+              <li>중간 전달자였던 레벨 기획 없이, 더 정확한 소통을 할 수 있습니다.</li>
+            </ul>
+          </div>
+          <div class="fix-i">
+            <b>원인 2 해결 방안 : 1/4단계</b>
+            <ul class="plist">
+              <li>스킬 프랍 제작 일정을 몬스터 브리핑에서 확정하고 몬스터 일정 기준으로 논의합니다.</li>
+              <li>배경 그래픽팀은 문서 확인 후, 참석이 필요 없을 경우 제작 일정만 짧게 논의하면 됩니다.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="story">
+    <div class="st">
+      <span class="st-k">문제</span>
+      <p>몬스터 기획의 니즈를 레벨 기획이 대신 문서화하고, 레벨 브리핑에서 전달하고 있었습니다.</p>
+    </div>
+    <div class="st">
+      <span class="st-k">조치</span>
+      <p>흐름을 단계별로 뜯어 원인 두 곳을 특정하고, “몬스터 기획자는 프랍 조립을 못 한다”는 제약을 확인해 <b>문서 작성과 조립을 분리</b>했습니다.</p>
+    </div>
+    <div class="st">
+      <span class="st-k">결과</span>
+      <p class="br">니즈를 가진 쪽이 직접 요청하고 몬스터 일정 기준으로 논의하는 구조로 바꿔,<br>
+      두 문제를 한 번에 해소하고 프로세스 문서로 명문화했습니다.<br>
+      이후 프로세스가 정착되는지 F/U까지 완료했습니다.</p>
+    </div>
+  </div>
+
+  <details class="more">
+    <summary><span>과정 자세히 보기</span><span class="more-hint">제약 확인 · 주체별 액션 · 예외 처리</span></summary>
+    <div class="more-body">
+      <div class="rows">
+        <div class="row">
+          <div class="rlab">제약 확인</div>
+          <div class="rbody">
+            <h4>R&amp;R을 조율하기 전에, 직군별로 가능한 업무의 범위를 확인했습니다.</h4>
+            <ul>
+              <li>몬스터 기획자는 프랍 조립을 할 수 없었습니다.</li>
+              <li>전부 몬스터 기획으로 옮기지 않고, 니즈를 문서로 쓰는 것까지만 몬스터 기획이 맡도록 했습니다.</li>
+              <li>조립은 레벨 기획 측에 업무요청으로 지원받도록 정리했습니다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="rlab">부담 설계</div>
+          <div class="rbody">
+            <ul>
+              <li>배경 그래픽 리더에게 몬스터 컨셉 회의 멘션은 리소스 요청에 대한 사전 노티일 뿐 참석할 필요가 없다고 명시했습니다.</li>
+              <li>몬스터 상세 브리핑 시에도 서면으로 충분하면 프랍 제작 일정만 조율하도록 부담을 줄였습니다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="rlab">예외 처리</div>
+          <div class="rbody">
+            <ul>
+              <li>적용 시점을 “오늘부터”로 명시했습니다.</li>
+              <li>기획이 진행된 몬스터는 상세 브리핑 때 정식 요청이 가도록 안내했습니다.</li>
+              <li>언제부터·누가·기존 건은 어떻게 처리할지에 대한 정리로 마무리했습니다.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th style="width:132px">주체</th><th>변경된 액션</th><th style="width:30%">설계 의도</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="k">몬스터 기획자</td>
+              <td>프랍 활용이 있으면 전투 컨셉·몬스터 상세 브리핑에 배경 그래픽 리더를 포함. 리소스 완료 시 레벨 기획에 조립 지원 요청 후 최종 조립까지 F/U</td>
+              <td>니즈 보유자가 직접 전달하도록 경로를 단축</td>
+            </tr>
+            <tr>
+              <td class="k" rowspan="2">배경 그래픽 리더</td>
+              <td>전투 컨셉 회의 멘션은 사전 노티<ul class="cell-ul"><li>참석 불필요. 상세 브리핑도 서면으로 충분하면 일정 확인만 진행</li></ul></td>
+              <td>프로세스를 추가하면서 참여 부담은 감소</td>
+            </tr>
+            <tr>
+              <td>몬스터 스킬 프랍 제작 일정을 <b>몬스터 조립/완료 시점 기준</b>으로 확인</td>
+              <td>레벨 프랍과 다른 기준선을 명시해 우선순위 밀림 차단</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ============ 03 자원 관리 ============ -->
+<section id="p3" class="rv">
+  <div class="shead">
+    <div>
+      <span class="sno">03 — 외부 업체 · 자원 관리</span>
+      <h2>오픈스펙을 계산해,<br>자원 관리를 설계했습니다.</h2>
+    </div>
+    <div class="stamps"><span class="stamp">외주 업체 관리</span><span class="stamp">인적·물적 자원 관리</span></div>
+  </div>
+
+  <p class="lede lede-br">
+    출시까지의 오픈스펙을 표준일정으로 계산해, 달성 가능한 스펙을 합의했습니다.<br>
+    외주 전환 플래닝 / 인력 재배치를 디렉터 라인에 제안했고, 적용했습니다.<br>
+    계산된 결과를 바탕으로 디렉터 회의에서 직군 채용 인원을 결정하는 데이터로 사용했습니다.
+  </p>
+
+  <div class="hook">
+    <div class="dlead">
+      <h3>세 가지 결정으로 출시일을 맞췄습니다</h3>
+      <p>
+        오픈스펙을 계산했을 때, 몬스터 일정이 출시일을 초과했습니다.<br>
+        수치는 예시로 대체했습니다.
+      </p>
+      <p class="ls-hint">실제 프로젝트에 반영된 3가지 결정을 클릭하면 적용 결과를 보실 수 있습니다.</p>
+    </div>
+
+    <div class="ls" id="ls">
+      <div class="ls-row ls-head" aria-hidden="true">
+        <span></span><div class="ls-track"><span class="ls-line-lab">출시일</span></div><span></span>
+      </div>
+      <div class="ls-row" data-k="mon"><span class="ls-lab">몬스터</span><div class="ls-track"><div class="ls-fill"></div></div><span class="ls-val">–</span></div>
+      <div class="ls-row" data-k="lvl"><span class="ls-lab">레벨</span><div class="ls-track"><div class="ls-fill"></div></div><span class="ls-val">–</span></div>
+      <div class="ls-row" data-k="pc"><span class="ls-lab">PC</span><div class="ls-track"><div class="ls-fill"></div></div><span class="ls-val">–</span></div>
+
+      <div class="ls-status" id="lsStatus" aria-live="polite"></div>
+
+      <div class="ls-levers">
+        <button type="button" class="lever" data-lv="out" aria-pressed="false"><span class="lv-box" aria-hidden="true"></span><span>저등급 몬스터 → 외주 전환</span></button>
+        <button type="button" class="lever" data-lv="move" aria-pressed="false"><span class="lv-box" aria-hidden="true"></span><span>PC 이펙터 1명 → 몬스터로</span></button>
+        <button type="button" class="lever" data-lv="hire" aria-pressed="false"><span class="lv-box" aria-hidden="true"></span><span>애니·기획 증원</span></button>
+      </div>
+      <p class="ls-why" id="lsWhy"></p>
+    </div>
+  </div>
+
+  <div class="story">
+    <div class="st">
+      <span class="st-k">문제</span>
+      <p>출시 스펙 기준으로 계산하자, 몬스터 일정이 출시일을 크게 넘었습니다.</p>
+    </div>
+    <div class="st">
+      <span class="st-k">조치</span>
+      <p>표준일정과 선후행 조건을 시뮬레이터에 넣어 오픈스펙을 산정하고, 이 데이터로 달성 가능한 스펙을 합의·조율했습니다.
+      계산 중 PC 여유 인력을 확인하다가 <b>PC 일정에 여유가 있다는 것</b>을 발견했습니다.</p>
+    </div>
+    <div class="st">
+      <span class="st-k">결과</span>
+      <p>저등급 몬스터 <b>외주 전환</b> · PC 이펙터 1명 <b>몬스터 재배치</b> · <b>애니/기획 증원</b>이 이 계산을 근거로 결정되었습니다.</p>
+    </div>
+  </div>
+
+  <details class="more">
+    <summary><span>과정 자세히 보기</span><span class="more-hint">표준일정 · 시뮬레이터 입력 · 외주 역산 · PC 여유 인력</span></summary>
+    <div class="more-body">
+
+      <div class="rows">
+        <div class="row">
+          <div class="rlab">표준일정</div>
+          <div class="rbody">
+            <h4>영역마다 다른 단위로 표준일정을 세웠습니다</h4>
+            <div class="tw" style="margin-top:10px">
+              <table>
+                <thead><tr><th style="width:110px">영역</th><th>표준일정 단위</th></tr></thead>
+                <tbody>
+                  <tr><td class="k">몬스터</td><td><b>등급별</b> 직군 WD</td></tr>
+                  <tr><td class="k">레벨</td><td><b>유형별</b> 직군 WD</td></tr>
+                  <tr><td class="k">PC</td><td>하위 구분 없이 <b>직군별</b> WD</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="rlab">시뮬레이터</div>
+          <div class="rbody">
+            <h4>넣은 것과 나온 것</h4>
+            <ul>
+              <li><b>직군별 인원</b></li>
+              <li><b>일감</b>과 각 일감의 <b>WD</b></li>
+              <li><b>출시 기간</b></li>
+              <li>일감 간 <b>선·후행 진행 조건</b></li>
+            </ul>
+            <p style="margin-top:8px">→ 출시일까지 영역별로 무엇이 들어오고 무엇이 넘치는지. 이 결과를 달성 가능한 스펙을 합의·조율하는 데이터로 썼습니다.</p>
+          </div>
+        </div>
+        <div class="row key">
+          <div class="rlab">PC 여유 인력</div>
+          <div class="rbody">
+            <h4>PC 이펙터를 몬스터 이펙터로 전환</h4>
+            <p>PC는 이펙터 인원 감축으로 보다 더 효율적인 일정이 가능함을 확인했습니다.</p>
+            <ul>
+              <li>1인 : 90WD (90MD)</li>
+              <li>2인 : 60WD (120MD)</li>
+              <li>3인 : 50WD (150MD)</li>
+            </ul>
+            <p style="margin-top:8px">효율만 보면 1인이 가장 높지만 출시 일정을 달성 가능한 균형점은 2인이었습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="note red" style="margin-bottom:16px"><b>외주 플래닝 · 출시일에서 역산</b></p>
+        <p class="body br" style="margin-bottom:16px">
+          저등급 몬스터를 외주로 돌리기로 한 뒤,<br>
+          오픈스펙까지의 모든 몬스터 외주 플래닝을 직접 진행해 수량과 기간을 확정했습니다.<br>
+          최종 완료 목표 시점에서 역산하여, 선행 부서마다 데드라인을 잡아 픽스했습니다.<br>
+          현재 그 플래닝대로 외주가 운영되고 있습니다.
+        </p>
+      </div>
+
+    </div>
+  </details>
+</section>
+
+<!-- ============ APPENDIX ============ -->
+<section id="appendix" class="rv">
+  <div class="shead">
+    <div>
+      <span class="sno">부록</span>
+      <h2>더 보기</h2>
+    </div>
+  </div>
+
+  <details class="more">
+    <summary><span>연도별 궤적 · 2024 → 2026</span></summary>
+    <div class="more-body">
+      <p class="lede lede-br" style="margin-bottom:0">
+        2024년 기획 직군 서브 PM으로 시작해,<br>
+        2025년 그래픽 직군 메인 PM, 2026년 던전 프로덕트 PM을 맡았습니다.<br>
+        담당 범위가 커지면서 맡는 업무도 함께 확장했고,<br>
+        AI를 활용한 툴 개발로 업무 영역을 한 번 더 넓혔습니다.
+      </p>
+      <div class="years" style="margin-top:30px">
+    <div class="yr">
+      <div class="yhead"><span class="ynum">2024</span><span class="ytag">기반 구축</span></div>
+      <p class="ydesc">일감 체계와 제작 프로세스를 문서로 정리한 해.</p>
+      <div class="yrole">기획 직군 서브 PM</div>
+      <ul class="ylist">
+        <li>입사 직후 온보딩 과제 18건 수행 → <b>컨플루언스 트리·개발 프로세스 개편안</b>을 첫 제안서로 제출</li>
+        <li>구전되던 제작 순서를 인터뷰로 수집해 <b>마을·퀘스트·이미지 제작 프로세스</b>로 확정</li>
+        <li><b>Jira Epic/Task Summary 규칙</b> 정리</li>
+        <li>Jira Automation 전체 규칙 최적화</li>
+        <li>기획/그래픽/기술이 다르게 쓰던 개발 용어를 수집·정의해 <b>프로젝트 정식 용어집</b> 릴리즈</li>
+        <li>제작 단위 별 진행률과 담당 직군을 한 페이지에서 보는 <b>상세 현황판 체계</b> 설계 → 이후 모든 빌드의 표준 포맷으로 사용</li>
+        <li>신규입사자용 가이드 제작</li>
+      </ul>
+    </div>
+    <div class="yr">
+      <div class="yhead"><span class="ynum">2025</span><span class="ytag">표준화</span></div>
+      <p class="ydesc">일하는 방식을 규칙으로 바꾼 해.</p>
+      <div class="yrole">그래픽 직군 메인 PM</div>
+      <ul class="ylist">
+        <li>그래픽 직군 리더 인터뷰로 <b>팀별 Jira Structure</b>를 제공하고, 사용성 인터뷰로 2차 개선</li>
+        <li><b>Jira 일감 계층 구조/네이밍 표준 개편</b>: Theme 계층 생성 및 네이밍 규칙 세분화 하여 개편, 일감 FS-SF연결 규칙 지정</li>
+        <li>일정 오류 알림 자동화: 휴가 중 발송 예외, 예정일 비교 로직, 지켜보기 인원 자동 지정</li>
+        <li>wiki 공간 재편 및 그래픽 각 팀 <b>월간 리포트 양식 통일</b></li>
+        <li>캐릭터/몬스터/레벨의 직군 별 표준 공수 취합 정리 후 <b>오픈스펙 계산</b></li>
+        <li>Teams Automate를 활용 해 <b>회의 요청 자동 포맷팅 플로우</b> 제작</li>
+      </ul>
+    </div>
+    <div class="yr">
+      <div class="yhead"><span class="ynum">2026</span><span class="ytag">전사 효율화</span></div>
+      <p class="ydesc">자동화 도구를 만들어 관리 비용 자체를 줄인 해.</p>
+      <div class="yrole">던전 프로덕트 PM</div>
+      <ul class="ylist">
+        <li><b>Teams → Slack 전환을 계획부터 실행까지 주도</b>: 채널 체계 재설계, 워크스페이스 권한, 알리미 연동, 데일리 스크럼·회의 공유 워크플로 자동화까지 20여 건</li>
+        <li><b>Jira Reminder(자동화 봇) → 출퇴근 앱 결합 → Jira Plus</b>로 이어지는 도구 계열을 기획·개발, 보안검수 통과 후 파일럿 운영 (대표 사례)</li>
+        <li><b>정기 Report 3종 구축</b>: Jira에서 보기 어려운 정보를 일간/주간/월간으로 제공. 일간은 조회율을 직접 분석해 개선안 도출, 월간은 개인 리포트 자동 생성까지 확장</li>
+        <li><b>일정 변동 추적 체계 변경</b>: 변경 이력에서 언제·왜 밀렸는지를 되짚어 누적 지연으로 환산 가능한 html을 제작하여 wiki에 연동</li>
+        <li>레벨 제작 워크플로 정비 및 내러티브 컷신 제작 라인 구축</li>
+      </ul>
+    </div>
+  </div>
+
+    </div>
+  </details>
+
+  <details class="more">
+    <summary><span>그 외, 만들고 옮기고 정리한 것들</span><span class="more-hint">7건</span></summary>
+    <div class="more-body">
+      <div class="arc">
+        <div class="ai">
+          <div class="aik">조직 소통 · 툴 전환</div>
+          <h4>Teams → Slack 전환 · 채널 구조 설계와 자동화 마이그레이션</h4>
+          <p class="br">개발실 전체의 협업 툴 전환을 계획부터 실행까지 맡았습니다.<br>
+          Teams에서 반복되던 담당자 누락 채널, 주요 인원이 빠진 소통 창구 문제를 채널 구조 재설계로 정리했습니다.<br>
+          알리미·리마인더·데일리 스크럼 공유 등 기존 자동화를 Slack으로 마이그레이션했습니다.<br>
+          워크스페이스 권한 설정과 공개 채널 안내 문서까지 20여 건의 작업으로 전환을 마무리했습니다.</p>
+        </div>
+        <div class="ai">
+          <div class="aik">일정 · 워크플로</div>
+          <h4>레벨 제작 워크플로 정비</h4>
+          <p>레벨 제작 워크플로를 정리해 <b>6개월 분량의 작업 리스트를 선제적으로 생성</b>하고, 일감 생성 규칙을 리더와 합의해 확정했습니다.</p>
+        </div>
+        <div class="ai">
+          <div class="aik">신규 라인 구축</div>
+          <h4>내러티브 컷신 제작 라인 구축</h4>
+          <p>관리 체계가 없던 내러티브 컷신에 <b>TaskSet 템플릿과 현황판을 새로 만들어</b> 제작 라인에 올리고, 공수 산정 기준표까지 작성했습니다.</p>
+        </div>
+        <div class="ai">
+          <div class="aik">자동화</div>
+          <h4>회의 요청 자동 포맷팅 플로우</h4>
+          <p class="br">사내에 AI 도구가 보급되기 전, Teams 메시지를 파싱·변환해 회의 서식을 구성하고<br>
+          모임까지 자동 생성하는 <b>14단계 플로우</b>를 인프라팀과의 협력으로 설계를 진행했습니다.<br>
+          팀 내 회의 예약 업무 시간을 효율적으로 단축했습니다.</p>
+        </div>
+        <div class="ai">
+          <div class="aik">프로세스 안착</div>
+          <h4>회의 요청 가이드 · 자동화 연동</h4>
+          <p>회의 요청 서식을 문서화하고 자동화에 반영해, <b>주 1건 이상 발생하던 필수 참석자 누락</b>을 줄였습니다.</p>
+        </div>
+        <div class="ai">
+          <div class="aik">대내외 커뮤니케이션</div>
+          <h4>내러티브–던전 연출 / NPC R&amp;R 조율</h4>
+          <p class="br">“니즈가 있는 프로덕트가 제작한다”는 기조로 논쟁을 정리하고,<br>
+          인적 자원을 고려한 추후 논의 시점까지 합의해 논쟁을 조율했습니다.</p>
+        </div>
+        <div class="ai">
+          <div class="aik">완주 · 기술 이슈</div>
+          <h4>AR 이펙트 최적화 프로세스 설계</h4>
+          <p>담당자 지정이 모호한 채 흐지부지되던 최적화 안건을 1·2차 프로세스로 분리 설계하고, 마감까지 약 6주간 F/U하며 완주시켰습니다.</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <h3 class="sub-h">툴 활용 능력치</h3>
+  <p class="body" style="margin-bottom:4px">수준은 그 도구로 <b>실제 무엇을 만들었는지</b>를 기준으로 나눴습니다. 로고에 마우스를 올리면 근거가 나옵니다.</p>
+
+  <div class="lgd">
+    <span class="lvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b class="on"></b></i><span>체계 구축</span></span>
+    <span class="lvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b></b></i><span>실무 운용</span></span>
+    <span class="lvl"><i><b class="on"></b><b class="on"></b><b></b><b></b></i><span>사용 경험</span></span>
+    <span class="lvl"><i><b class="on"></b><b></b><b></b><b></b></i><span>환경 이해</span></span>
+  </div>
+
+  <div class="sk">
+    <div class="skg">
+      <div class="skg-h">프로젝트 관리</div>
+      <div class="tiles">
+        <button class="tile" type="button" aria-label="Jira">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.575 24V12.518a1.005 1.005 0 0 0-1.005-1.005zm5.723-5.756H5.736a5.215 5.215 0 0 0 5.215 5.214h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.758a1.001 1.001 0 0 0-1.001-1.001zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24 12.483V1.005A1.001 1.001 0 0 0 23.013 0Z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b class="on"></b></i></span>
+          <span class="tip"><span class="tip-n">Jira</span><span class="tip-l">체계 구축</span><span class="tip-e">구조·네이밍 표준 개편 (Theme 계층·선후행 규칙)<br>7개 팀 Structure 개설<br>Automation 규칙 전수 정리<br>JQL·ScriptRunner 기반 데일리 패트롤과<br>정기 리포트 구축</span></span>
+        </button>
+        <button class="tile" type="button" aria-label="Confluence">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.87 18.257c-.248.382-.53.875-.763 1.245a.764.764 0 0 0 .255 1.04l4.965 3.054a.764.764 0 0 0 1.058-.26c.199-.332.454-.763.733-1.221 1.967-3.247 3.945-2.853 7.508-1.146l4.957 2.337a.764.764 0 0 0 1.028-.382l2.364-5.346a.764.764 0 0 0-.382-1 599.851 599.851 0 0 1-4.965-2.361C10.911 10.97 5.224 11.185.87 18.257zM23.131 5.743c.249-.405.531-.875.764-1.25a.764.764 0 0 0-.256-1.034L18.675.404a.764.764 0 0 0-1.058.26c-.195.335-.451.763-.734 1.225-1.966 3.246-3.945 2.85-7.508 1.146L4.437.694a.764.764 0 0 0-1.027.382L1.046 6.422a.764.764 0 0 0 .382 1c1.039.49 3.105 1.467 4.965 2.361 6.698 3.246 12.392 3.029 16.738-4.04z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b class="on"></b></i></span>
+          <span class="tip"><span class="tip-n">Confluence</span><span class="tip-l">체계 구축</span><span class="tip-e">공통·피처 문서 공간 재편<br>제작 프로세스 가이드와 현황판 표준 포맷 수립<br>프로젝트 정식 용어집 릴리즈</span></span>
+        </button>
+        <button class="tile" type="button" aria-label="Notion">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b></b><b></b></i></span>
+          <span class="tip"><span class="tip-n">Notion</span><span class="tip-l">사용 경험</span><span class="tip-e">개인 업무 정리와<br>문서 초안 작성에 사용해 본 수준</span></span>
+        </button>
+      </div>
+    </div>
+    <div class="skg">
+      <div class="skg-h">협업 · 소통</div>
+      <div class="tiles">
+        <button class="tile" type="button" aria-label="Slack">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b class="on"></b></i></span>
+          <span class="tip"><span class="tip-n">Slack</span><span class="tip-l">체계 구축</span><span class="tip-e">개발실 전체 전환을 계획부터 실행까지 주도<br>채널 체계 재설계 · 워크스페이스 권한<br>알리미 연동<br>데일리 스크럼·회의 공유 워크플로 자동화</span></span>
+        </button>
+        <button class="tile" type="button" aria-label="Microsoft Teams">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.625 8.127q-.55 0-1.025-.205-.475-.205-.832-.563-.358-.357-.563-.832Q18 6.053 18 5.502q0-.54.205-1.02t.563-.837q.357-.358.832-.563.474-.205 1.025-.205.54 0 1.02.205t.837.563q.358.357.563.837.205.48.205 1.02 0 .55-.205 1.025-.205.475-.563.832-.357.358-.837.563-.48.205-1.02.205zm0-3.75q-.469 0-.797.328-.328.328-.328.797 0 .469.328.797.328.328.797.328.469 0 .797-.328.328-.328.328-.797 0-.469-.328-.797-.328-.328-.797-.328zM24 10.002v5.578q0 .774-.293 1.46-.293.685-.803 1.194-.51.51-1.195.803-.686.293-1.459.293-.445 0-.908-.105-.463-.106-.85-.329-.293.95-.855 1.729-.563.78-1.319 1.336-.756.557-1.67.861-.914.305-1.898.305-1.148 0-2.162-.398-1.014-.399-1.805-1.102-.79-.703-1.312-1.664t-.674-2.086h-5.8q-.411 0-.704-.293T0 16.881V6.873q0-.41.293-.703t.703-.293h8.59q-.34-.715-.34-1.5 0-.727.275-1.365.276-.639.75-1.114.475-.474 1.114-.75.638-.275 1.365-.275t1.365.275q.639.276 1.114.75.474.475.75 1.114.275.638.275 1.365t-.275 1.365q-.276.639-.75 1.113-.475.475-1.114.75-.638.276-1.365.276-.188 0-.375-.024-.188-.023-.375-.058v1.078h10.875q.469 0 .797.328.328.328.328.797zM12.75 2.373q-.41 0-.78.158-.368.158-.638.434-.27.275-.428.639-.158.363-.158.773 0 .41.158.78.159.368.428.638.27.27.639.428.369.158.779.158.41 0 .773-.158.364-.159.64-.428.274-.27.433-.639.158-.369.158-.779 0-.41-.158-.773-.159-.364-.434-.64-.275-.275-.639-.433-.363-.158-.773-.158zM6.937 9.814h2.25V7.94H2.814v1.875h2.25v6h1.875zm10.313 7.313v-6.75H12v6.504q0 .41-.293.703t-.703.293H8.309q.152.809.556 1.5.405.691.985 1.19.58.497 1.318.779.738.281 1.582.281.926 0 1.746-.352.82-.351 1.436-.966.615-.616.966-1.43.352-.815.352-1.752zm5.25-1.547v-5.203h-3.75v6.855q.305.305.691.452.387.146.809.146.469 0 .879-.176.41-.175.715-.48.304-.305.48-.715t.176-.879Z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b></b></i></span>
+          <span class="tip"><span class="tip-n">Microsoft Teams</span><span class="tip-l">실무 운용</span><span class="tip-e">Teams → Slack 전환 이전 주 소통 도구<br>봇 DM과 Adaptive Card 연동을 직접 설계</span></span>
+        </button>
+        <button class="tile" type="button" aria-label="SharePoint">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 13.5q0 1.242-.475 2.332-.474 1.09-1.289 1.904-.814.815-1.904 1.29-1.09.474-2.332.474-.762 0-1.523-.2-.106.997-.557 1.858-.451.862-1.154 1.494-.704.633-1.606.99-.902.358-1.91.358-1.09 0-2.045-.416-.955-.416-1.664-1.125-.709-.709-1.125-1.664Q6 19.84 6 18.75q0-.188.018-.375.017-.188.04-.375H.997q-.41 0-.703-.293T0 17.004V6.996q0-.41.293-.703T.996 6h3.54q.14-1.277.726-2.373.586-1.096 1.488-1.904Q7.652.914 8.807.457 9.96 0 11.25 0q1.395 0 2.625.533T16.02 1.98q.914.915 1.447 2.145T18 6.75q0 .188-.012.375-.011.188-.035.375 1.242 0 2.344.469 1.101.468 1.928 1.277.826.809 1.3 1.904Q24 12.246 24 13.5zm-12.75-12q-.973 0-1.857.34-.885.34-1.577.943-.691.604-1.154 1.43Q6.2 5.039 6.06 6h4.945q.41 0 .703.293t.293.703v4.945l.21-.035q.212-.75.61-1.424.399-.673.944-1.218.545-.545 1.213-.944.668-.398 1.43-.61.093-.503.093-.96 0-1.09-.416-2.045-.416-.955-1.125-1.664-.709-.709-1.664-1.125Q12.34 1.5 11.25 1.5zM6.117 15.902q.54 0 1.06-.111.522-.111.932-.37.41-.257.662-.679.252-.422.252-1.055 0-.632-.263-1.054-.264-.422-.662-.703-.399-.282-.856-.463l-.855-.34q-.399-.158-.662-.334-.264-.176-.264-.445 0-.2.14-.323.141-.123.335-.193.193-.07.404-.094.21-.023.351-.023.598 0 1.055.152.457.153.95.457V8.543q-.282-.082-.522-.14-.24-.06-.475-.1-.234-.041-.486-.059-.252-.017-.557-.017-.515 0-1.054.117-.54.117-.979.375-.44.258-.715.68-.275.421-.275 1.03 0 .598.263.997.264.398.663.68.398.28.855.474l.856.363q.398.17.662.358.263.187.263.457 0 .222-.123.351-.123.13-.31.2-.188.07-.393.087-.205.018-.369.018-.703 0-1.248-.234-.545-.235-1.107-.621v1.875q1.195.468 2.472.468zM11.25 22.5q.773 0 1.453-.293t1.19-.803q.51-.51.808-1.195.299-.686.299-1.459 0-.668-.223-1.277-.222-.61-.62-1.096-.4-.486-.95-.826-.55-.34-1.207-.48v1.933q0 .41-.293.703t-.703.293H7.57q-.07.375-.07.75 0 .773.293 1.459t.803 1.195q.51.51 1.195.803.686.293 1.459.293zM18 18q.926 0 1.746-.352.82-.351 1.436-.966.615-.616.966-1.43.352-.815.352-1.752 0-.926-.352-1.746-.351-.82-.966-1.436-.616-.615-1.436-.966Q18.926 9 18 9t-1.74.357q-.815.358-1.43.973t-.973 1.43q-.357.814-.357 1.74 0 .129.006.258t.017.258q.551.27 1.02.65t.838.855q.369.475.627 1.026.258.55.387 1.148Q17.18 18 18 18Z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b></b></i></span>
+          <span class="tip"><span class="tip-n">SharePoint</span><span class="tip-l">실무 운용</span><span class="tip-e">팀 문서·자료 공간 운영 및 권한 관리</span></span>
+        </button>
+        <button class="tile" type="button" aria-label="OneDrive">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><title id="simpleicons-onedrive-icon">OneDrive icon</title><path d="M4.92 17.562c-.499.305-1.059.457-1.68.457-.92-.029-1.68-.346-2.287-.951-.607-.601-.922-1.367-.953-2.282.016-.862.291-1.594.83-2.192.54-.601 1.225-.948 2.058-1.05-.03-.178-.042-.367-.042-.566.03-1.14.42-2.084 1.17-2.819.754-.735 1.7-1.125 2.842-1.155.719 0 1.364.165 1.934.51.48-.766 1.096-1.395 1.861-1.859.779-.465 1.65-.705 2.609-.721 1.291.03 2.385.436 3.314 1.215.93.78 1.516 1.785 1.756 3.03h-.285c-.465 0-.869.06-1.23.194-.479-.51-1.035-.898-1.664-1.169-.615-.271-1.29-.39-2.011-.39-.66 0-1.29.104-1.89.33-.6.225-1.14.539-1.62.959-.42.36-.765.766-1.05 1.23s-.48.96-.585 1.485c-.36.075-.705.179-1.021.314-.51.239-.944.569-1.289 1.005-.33.375-.586.811-.75 1.305-.165.496-.256 1.006-.256 1.545 0 .6.091 1.156.301 1.666l-.062-.091zm16.848-3.747c1.576.391 2.318 1.32 2.225 2.781-.092 1.463-.943 2.287-2.555 2.471H8.7c-2.104-.277-3.138-1.365-3.102-3.263.034-1.905 1.104-2.954 3.21-3.135.275-2.04 1.316-3.3 3.12-3.78 1.806-.494 3.342.061 4.612 1.681.436-.36.986-.511 1.65-.466.668.045 1.234.181 1.697.436.6.314 1.08.765 1.396 1.336.313.568.479 1.215.479 1.919l.006.02z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b></b></i></span>
+          <span class="tip"><span class="tip-n">OneDrive</span><span class="tip-l">실무 운용</span><span class="tip-e">문서 공유와 버전 관리에 일상적으로 사용</span></span>
+        </button>
+        <button class="tile" type="button" aria-label="Perforce">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7.386 14.957 2.279-1.316-.576-.333A1.48 1.48 0 0 1 8.334 12c0-.262.073-.915.755-1.308l10.31-5.953a1.49 1.49 0 0 1 1.51 0c.228.13.755.52.755 1.308v11.906c0 .788-.527 1.178-.754 1.308s-.828.393-1.51 0l-2.732-1.577-2.334 1.348 3.899 2.251a3.81 3.81 0 0 0 3.845 0A3.81 3.81 0 0 0 24 17.953V6.047a3.81 3.81 0 0 0-1.922-3.33 3.83 3.83 0 0 0-1.923-.52c-.66 0-1.32.173-1.922.52L7.923 8.67A3.81 3.81 0 0 0 6 12c0 1.17.51 2.234 1.386 2.956zm9.228-5.913-2.279 1.316.576.333c.682.393.755 1.046.755 1.308 0 .263-.073.915-.755 1.308l-10.31 5.954a1.49 1.49 0 0 1-1.51 0 1.48 1.48 0 0 1-.755-1.308V6.047c0-.788.527-1.178.754-1.308s.828-.393 1.51 0l2.732 1.577 2.334-1.348-3.899-2.251a3.81 3.81 0 0 0-3.845 0A3.81 3.81 0 0 0 0 6.047v11.906c0 1.39.72 2.635 1.922 3.33a3.83 3.83 0 0 0 1.923.52c.66 0 1.32-.173 1.922-.52l10.31-5.953A3.81 3.81 0 0 0 18 12c0-1.17-.51-2.234-1.386-2.956"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b></b></i></span>
+          <span class="tip"><span class="tip-n">Perforce</span><span class="tip-l">실무 운용</span><span class="tip-e">작업물 체크인과 버전 관리를 실무에서 사용</span></span>
+        </button>
+        <button class="tile" type="button" aria-label="Unreal Engine 5">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0a12 12 0 1012 12A12 12 0 0012 0zm0 23.52A11.52 11.52 0 1123.52 12 11.52 11.52 0 0112 23.52zm7.13-9.791c-.206.997-1.126 3.557-4.06 4.942l-1.179-1.325-1.988 2a7.338 7.338 0 01-5.804-2.978 2.859 2.859 0 00.65.123c.326.006.678-.114.678-.66v-5.394a.89.89 0 00-1.116-.89c-.92.212-1.656 2.509-1.656 2.509a7.304 7.304 0 012.528-5.597 7.408 7.408 0 013.73-1.721c-1.006.573-1.57 1.507-1.57 2.29 0 1.262.76 1.109.984.923v7.28a1.157 1.157 0 00.148.256 1.075 1.075 0 00.88.445c.76 0 1.747-.868 1.747-.868V9.172c0-.6-.452-1.324-.905-1.572 0 0 .838-.149 1.484.346a5.537 5.537 0 01.387-.425c1.508-1.48 2.929-1.902 4.112-2.112 0 0-2.151 1.69-2.151 3.96 0 1.687.043 5.801.043 5.801.799.771 1.986-.342 3.059-1.441Z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b></b><b></b></i></span>
+          <span class="tip"><span class="tip-n">Unreal Engine 5</span><span class="tip-l">사용 경험</span><span class="tip-e">팀 협업 하에 엔진 구조를 이해하기 위해<br>Unreal Editor로 간이 레벨을 직접 제작해 봤습니다</span></span>
+        </button>
+      </div>
+    </div>
+    <div class="skg">
+      <div class="skg-h">자동화 · AI</div>
+      <div class="tiles">
+        <button class="tile" type="button" aria-label="Jira Automation · ScriptRunner">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.12 11.084a.683.683 0 00-1.16.126L.075 22.974a.703.703 0 00.63 1.018h8.19a.678.678 0 00.63-.39c1.767-3.65.696-9.203-2.406-12.52zM11.434.386a15.515 15.515 0 00-.906 15.317l3.95 7.9a.703.703 0 00.628.388h8.19a.703.703 0 00.63-1.017L12.63.38a.664.664 0 00-1.196.006z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b class="on"></b></i></span>
+          <span class="tip"><span class="tip-n">Jira Automation · ScriptRunner</span><span class="tip-l">체계 구축</span><span class="tip-e">난립하던 규칙을 전수 조사해 최적화 문서로 정리<br>일정 오류 알림 강화<br>휴가 예외·지켜보기 인원 자동 지정 구현</span></span>
+        </button>
+        <button class="tile" type="button" aria-label="Power Automate">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m20.079 7.235 3.666 4.097c.34.38.34.956 0 1.336l-7.63 8.528c-.19.213-.462.334-.748.334H7.289l12.79-14.295ZM6.789 21.53H1.005c-.867 0-1.326-1.025-.748-1.671L15.748 2.545c.139.057.265.145.367.259l3.631 4.058a.478.478 0 0 0-.039.039L6.916 21.197a.497.497 0 0 0-.127.333Zm8.356-19.06-8.192 9.155L.257 4.141c-.578-.646-.119-1.671.748-1.671h14.14Z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b class="on"></b></i></span>
+          <span class="tip"><span class="tip-n">Power Automate</span><span class="tip-l">체계 구축</span><span class="tip-e">Teams 메시지를 파싱·변환해 회의 서식 구성<br>모임까지 자동 생성하는 14단계 플로우 설계<br>팀원별 커스텀 배포</span></span>
+        </button>
+        <button class="tile" type="button" aria-label="Google Apps Script">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.363 2.54a3.136 3.136 0 0 0-.376.022 2.864 2.864 0 0 0-1.589.828c-.562.58-.82 1.115-.773 1.943-.01.264.193 1.023.272 1.274 1.115 3.546 2.09 6.75 3.26 10.279.08.246.168.486.267.72.02.047.035.046.048-.004.077-.297.174-.612.29-.945.894-2.576 1.772-5.14 2.633-7.696a.345.345 0 0 0 .004-.217 163.054 163.054 0 0 0-1.49-4.572 2.603 2.603 0 0 0-.704-.933c-.55-.46-1.166-.694-1.842-.7Zm9.078.117a2.734 2.734 0 0 0-2.878 1.828l-4.576 13.289a2.734 2.734 0 0 0 1.695 3.475l.12.04a2.734 2.734 0 0 0 3.475-1.694L23.85 6.307a2.734 2.734 0 0 0-1.695-3.476c-.233-.1-.506-.124-.716-.174ZM12.375 3.96a1.396 1.396 0 1 1 0 2.791 1.395 1.395 0 0 1 0-2.79zm8.809.07a1.402 1.402 0 1 1 0 2.803 1.402 1.402 0 0 1 0-2.803zM5.419 7.605a2.853 2.853 0 0 0-.468.052 2.683 2.683 0 0 0-1.337.627 2.62 2.62 0 0 0-.924 1.833 3.808 3.808 0 0 0 0 .648 2.52 2.52 0 0 0 .673 1.52c.221.238.465.454.732.648 3.043 2.21 6.08 4.43 9.108 6.664a.78.78 0 0 0 .158.089c.03-.043.032-.098.007-.167a17.409 17.409 0 0 0-.317-1.066 532.752 532.752 0 0 1-2.02-6.251 41.91 41.91 0 0 0-.497-1.477c-.967-.849-2.078-1.6-3.023-2.302A3.848 3.848 0 0 0 6.153 7.7a2.388 2.388 0 0 0-.734-.094Zm.02 1.424a1.398 1.398 0 1 1 0 2.796 1.398 1.398 0 0 1 0-2.796zm-2.458 6.792c-.733-.006-1.375.202-1.927.622a2.72 2.72 0 0 0-.95 1.45 2.78 2.78 0 0 0-.09 1.04 2.74 2.74 0 0 0 .695 1.583c.664.578 1.26.85 2 .945 1.42-.005 2.84-.012 4.262-.02h.418c2.277-.003 4.513-.002 6.706.003.148.005.28.003.392-.01.06-.005.091-.031.092-.077a10.656 10.656 0 0 0-.834-.653 488.746 488.746 0 0 1-6.57-4.815.236.236 0 0 0-.14-.047c-1.34-.003-2.691-.01-4.054-.02zm-.19 1.418a1.402 1.402 0 1 1 0 2.803 1.402 1.402 0 0 1 0-2.803zm13.874.002a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b></b></i></span>
+          <span class="tip"><span class="tip-n">Google Apps Script</span><span class="tip-l">실무 운용</span><span class="tip-e">법정 공휴일을 제외하는<br>Slack 리마인더 자동화 구축 및 가이드 배포</span></span>
+        </button>
+        <button class="tile" type="button" aria-label="Claude">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b class="on"></b></i></span>
+          <span class="tip"><span class="tip-n">Claude</span><span class="tip-l">체계 구축</span><span class="tip-e">오픈스펙 일정 산정 툴 제작<br>기획서·가이드 초안 작성<br>데이터 정리와 산정 검산까지<br>일상 업무 전반에서 상시 활용</span></span>
+        </button>
+      </div>
+    </div>
+    <div class="skg">
+      <div class="skg-h">문서 · 데이터</div>
+      <div class="tiles">
+        <button class="tile" type="button" aria-label="Microsoft Excel">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 1.5q.41 0 .7.3.3.29.3.7v19q0 .41-.3.7-.29.3-.7.3H7q-.41 0-.7-.3-.3-.29-.3-.7V18H1q-.41 0-.7-.3-.3-.29-.3-.7V7q0-.41.3-.7Q.58 6 1 6h5V2.5q0-.41.3-.7.29-.3.7-.3zM6 13.28l1.42 2.66h2.14l-2.38-3.87 2.34-3.8H7.46l-1.3 2.4-.05.08-.04.09-.64-1.28-.66-1.29H2.59l2.27 3.82-2.48 3.85h2.16zM14.25 21v-3H7.5v3zm0-4.5v-3.75H12v3.75zm0-5.25V7.5H12v3.75zm0-5.25V3H7.5v3zm8.25 15v-3h-6.75v3zm0-4.5v-3.75h-6.75v3.75zm0-5.25V7.5h-6.75v3.75zm0-5.25V3h-6.75v3Z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b></b></i></span>
+          <span class="tip"><span class="tip-n">Microsoft Excel</span><span class="tip-l">실무 운용</span><span class="tip-e">오픈스펙 수량을 계산하는 간단한 계산기 제작 등<br>실무 데이터 정리에 사용</span></span>
+        </button>
+        <button class="tile" type="button" aria-label="PowerPoint">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 1.5q1.453 0 2.795.375 1.342.375 2.508 1.06 1.166.686 2.12 1.641.956.955 1.641 2.121.686 1.166 1.061 2.508Q24 10.547 24 12q0 1.453-.375 2.795-.375 1.342-1.06 2.508-.686 1.166-1.641 2.12-.955.956-2.121 1.641-1.166.686-2.508 1.061-1.342.375-2.795.375-1.29 0-2.52-.305-1.23-.304-2.337-.884-1.108-.58-2.063-1.418-.955-.838-1.693-1.893H.997q-.411 0-.704-.293T0 17.004V6.996q0-.41.293-.703T.996 6h3.89q.739-1.055 1.694-1.893.955-.837 2.063-1.418 1.107-.58 2.337-.884Q12.21 1.5 13.5 1.5zm.75 1.535v8.215h8.215q-.14-1.64-.826-3.076-.686-1.436-1.782-2.531-1.095-1.096-2.537-1.782-1.441-.685-3.07-.826zm-5.262 7.57q0-.68-.228-1.166-.229-.486-.627-.79-.399-.305-.938-.446-.539-.14-1.172-.14H2.848v7.863h1.84v-2.742H5.93q.574 0 1.119-.17t.978-.493q.434-.322.698-.802.263-.48.263-1.114zM13.5 21q1.172 0 2.262-.287t2.056-.82q.967-.534 1.776-1.278.808-.744 1.418-1.664.61-.92.984-1.986.375-1.067.469-2.227h-9.703V3.035q-1.735.14-3.27.908T6.797 6h4.207q.41 0 .703.293t.293.703v10.008q0 .41-.293.703t-.703.293H6.797q.644.715 1.412 1.271.768.557 1.623.944.855.387 1.781.586Q12.54 21 13.5 21zM5.812 9.598q.575 0 .915.228.34.229.34.838 0 .27-.124.44-.123.17-.31.275-.188.105-.422.146-.234.041-.445.041H4.687V9.598Z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b class="on"></b></i></span>
+          <span class="tip"><span class="tip-n">PowerPoint</span><span class="tip-l">체계 구축</span><span class="tip-e">프로세스 개선 제안과<br>AD·실장 대상 브리핑 자료 작성</span></span>
+        </button>
+        <button class="tile" type="button" aria-label="Word">
+          <span class="tmk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.004 1.5q.41 0 .703.293t.293.703v19.008q0 .41-.293.703t-.703.293H6.996q-.41 0-.703-.293T6 21.504V18H.996q-.41 0-.703-.293T0 17.004V6.996q0-.41.293-.703T.996 6H6V2.496q0-.41.293-.703t.703-.293zM6.035 11.203l1.442 4.735h1.64l1.57-7.876H9.036l-.937 4.653-1.325-4.5H5.38l-1.406 4.523-.938-4.675H1.312l1.57 7.874h1.641zM22.5 21v-3h-15v3zm0-4.5v-3.75H12v3.75zm0-5.25V7.5H12v3.75zm0-5.25V3h-15v3Z"/></svg></span>
+          <span class="tlvl"><i><b class="on"></b><b class="on"></b><b class="on"></b><b></b></i></span>
+          <span class="tip"><span class="tip-n">Word</span><span class="tip-l">실무 운용</span><span class="tip-e">기획서·가이드 문서 작성</span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="foot">
+  <div>
+    <div class="nm">최지은 <span style="font-weight:400;font-size:13px;color:var(--muted)">Project Manager</span></div>
+    <div style="font-size:13.5px;margin-top:3px"><a href="mailto:0.choijieun@gmail.com">0.choijieun@gmail.com</a></div>
+  </div>
+  <div class="mt">
+    NEOPLE · Project Manager · 2024.03 – 현재<br>
+    보안상 프로젝트명 · 구성원 실명 · 사내 링크는 마스킹했습니다
+  </div>
+</div>
+
+</div><!-- /sheet -->
+</main>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* red pen markings — draw whenever they enter view */
+  var marks = [].slice.call(document.querySelectorAll(".mark"));
+  requestAnimationFrame(function(){
+    marks.forEach(function(m){
+      var p = m.querySelector("path");
+      if (p) { try { p.style.setProperty("--len", Math.ceil(p.getTotalLength()) + ""); } catch(e){} }
+    });
+    document.body.classList.add("drawn");
+
+    if (reduce || !("IntersectionObserver" in window)) {
+      marks.forEach(function(m){ m.classList.add("draw"); });
+    } else {
+      var mo = new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if (e.isIntersecting) e.target.classList.add("draw");
+          else e.target.classList.remove("draw");
+        });
+      }, { threshold: .25 });
+      marks.forEach(function(m){
+        // 로드 시점에 이미 화면 안이면 옵서버를 기다리지 않고 바로 그린다
+        var r = m.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) m.classList.add("draw");
+        mo.observe(m);
+      });
+      // 최후 안전장치 — 어떤 이유로든 감지가 안 되면 화면 안의 마킹은 반드시 보이게
+      setTimeout(function(){
+        marks.forEach(function(m){
+          var r = m.getBoundingClientRect();
+          if (r.top < window.innerHeight && r.bottom > 0) m.classList.add("draw");
+        });
+      }, 1200);
+    }
+  });
+
+  /* reveal on scroll */
+  var rv = [].slice.call(document.querySelectorAll(".rv"));
+  if (reduce || !("IntersectionObserver" in window)) {
+    rv.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var ro = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add("in"); ro.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: .06 });
+    rv.forEach(function(el){ ro.observe(el); });
+  }
+
+  /* axis cursor */
+  var links = [].slice.call(document.querySelectorAll(".ax"));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        links.forEach(function(a){ a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id); });
+      });
+    }, { rootMargin: "-42% 0px -52% 0px" });
+    secs.forEach(function(s){ if (s) io.observe(s); });
+  }
+
+  /* ---- tool tooltips ---- */
+  var tiles = [].slice.call(document.querySelectorAll(".tile"));
+  if (tiles.length){
+    var box = document.createElement("div");
+    box.id = "tipbox"; box.setAttribute("role", "tooltip");
+    document.body.appendChild(box);
+    var cur = null;
+
+    function fill(t){
+      var tip = t.querySelector(".tip");
+      while (box.firstChild) box.removeChild(box.firstChild);
+      var n = document.createElement("div"); n.className = "n";
+      [].slice.call(tip.querySelector(".tip-n").childNodes).forEach(function(c){ n.appendChild(c.cloneNode(true)); });
+      var l = document.createElement("span"); l.className = "l"; l.textContent = tip.querySelector(".tip-l").textContent;
+      var e = document.createElement("span"); e.className = "e"; [].slice.call(tip.querySelector(".tip-e").childNodes).forEach(function(c){ e.appendChild(c.cloneNode(true)); });
+      box.appendChild(n); box.appendChild(l); box.appendChild(e);
+    }
+    function place(t){
+      var r = t.getBoundingClientRect();
+      box.style.visibility = "hidden";
+      box.classList.add("on");
+      var bw = box.offsetWidth, bh = box.offsetHeight;
+      var left = r.left + r.width / 2 - bw / 2;
+      left = Math.max(10, Math.min(left, window.innerWidth - bw - 10));
+      var top = r.bottom + 9;
+      if (top + bh > window.innerHeight - 10) top = r.top - bh - 9;
+      box.style.left = left + "px";
+      box.style.top = Math.max(10, top) + "px";
+      box.style.visibility = "";
+    }
+    function show(t){
+      if (cur === t) return;
+      if (cur) cur.classList.remove("open");
+      cur = t; t.classList.add("open");
+      fill(t); place(t);
+    }
+    function hide(){
+      if (cur) cur.classList.remove("open");
+      cur = null; box.classList.remove("on");
+    }
+    tiles.forEach(function(t){
+      t.addEventListener("mouseenter", function(){ show(t); });
+      t.addEventListener("mouseleave", function(){ hide(); });
+      t.addEventListener("focus", function(){ show(t); });
+      t.addEventListener("blur", function(){ hide(); });
+      t.addEventListener("click", function(ev){ ev.preventDefault(); show(t); });
+    });
+    window.addEventListener("scroll", function(){ if (cur) place(cur); }, { passive:true });
+    window.addEventListener("resize", hide);
+    document.addEventListener("click", function(e){
+      if (!cur) return;
+      var el = e.target;
+      while (el){ if (el.classList && el.classList.contains("tile")) return; el = el.parentNode; }
+      hide();
+    });
+  }
+
+  /* ---- Switch demo ---- */
+  var idle = document.getElementById("idleView"),
+      feed = document.getElementById("feedView"),
+      lock = document.getElementById("lockView"),
+      chip = document.getElementById("stateChip"),
+      head = document.getElementById("botHead"),
+      card = document.getElementById("botCard"),
+      list = document.getElementById("tkList");
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+  function pad(n){ return (n<10?"0":"")+n; }
+  function fmt(d){ return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate()); }
+  function stampT(d){ return fmt(d)+" "+pad(d.getHours())+":"+pad(d.getMinutes()); }
+  function nextBiz(d){ var x=new Date(d.getTime()); do{ x.setDate(x.getDate()+1); } while(x.getDay()===0||x.getDay()===6); return x; }
+  function shiftDays(n){ var d=new Date(); d.setDate(d.getDate()+n); d.setHours(18,0,0,0); return d; }
+  function statusKo(s){ return s==="Done" ? "완료" : (s==="In Progress" ? "진행중" : "열림"); }
+
+  var ERRKEY = "PM-0951";
+  var T, handled, view;
+
+  function resetState(){
+    T = {
+      "PM-1042": { sum:"컨텐츠 제작 수량 시뮬레이터 제작", status:"To Do",       due:shiftDays(0) },
+      "PM-0987": { sum:"인사발령 관련 후속 조치",           status:"In Progress", due:shiftDays(0) },
+      "PM-0951": { sum:"프랍 일감 관리 방안 개선 문서화",   status:"In Progress", due:shiftDays(-3) }
+    };
+    handled = {};
+    view = "idle";
+  }
+  resetState();
+
+  var VIEWS = {
+    "in":  { head:"Jira 시작 일감 리마인더", items:[["PM-1042","start"],[ERRKEY,"end"]] },
+    "out": { head:"Jira 종료 일감 리마인더", items:[["PM-0987","end"],["PM-1042","end"]] }
+  };
+
+  function setChip(t, hot){ chip.textContent = t; chip.className = "chipx" + (hot ? " hot" : (t==="대기" ? "" : " ok")); }
+
+  function dueLabel(t){
+    var today = fmt(new Date()), d = fmt(t.due);
+    if (d === today) return "오늘";
+    return d < today ? d + " (지남)" : d;
+  }
+  function isLate(k){
+    var t = T[k];
+    return t.status !== "Done" && fmt(t.due) < fmt(new Date());
+  }
+
+  function resultHTML(k){
+    var r = handled[view+":"+k]; if (!r) return "";
+    var rows = r.mode === "date"
+      ? [["기존 마감일", r.prevDue], ["변경 마감일", r.newDue], ["처리 시각", r.at], ["Jira 코멘트", "자동 추가됨"]]
+      : [["변경 상태", r.prevStatus + " → " + r.newStatus], ["처리 시각", r.at], ["Jira 코멘트", "자동 추가됨"]];
+    return '<div class="res' + (r.mode === "date" ? " late" : "") + '"><div class="resh">' +
+      esc(r.title) + " · " + esc(k) + "</div><dl>" +
+      rows.map(function(x){ return "<dt>" + esc(x[0]) + "</dt><dd>" + esc(x[1]) + "</dd>"; }).join("") +
+      "</dl></div>";
+  }
+
+  function rowHTML(k, role){
+    var t = T[k], off = !!handled[view+":"+k];
+    var acts = (role === "start" ? ["작업 시작", "날짜 변경"] : ["작업 완료", "기한 연장"]).map(function(a){
+      return '<button class="btn sm" type="button"' + (off ? " disabled" : "") +
+             ' data-act="' + esc(a) + '" data-key="' + esc(k) + '">' + esc(a) + "</button>";
+    }).join("");
+    var meta = role === "start"
+      ? "상태: " + statusKo(t.status) + " · 시작일: 오늘"
+      : "상태: " + statusKo(t.status) + " · 종료일: " + dueLabel(t);
+    return '<div class="tk"><div class="tkk">' + esc(k) + '</div><div class="tks">' + esc(t.sum) +
+      '</div><div class="tkm' + (!off && isLate(k) ? " late" : "") + '">' + esc(meta) + "</div>" +
+      '<div class="tka">' + acts + "</div>" + resultHTML(k) + "</div>";
+  }
+
+  function render(){
+    if (view === "idle"){
+      idle.style.display = ""; feed.style.display = "none";
+      lock.classList.remove("show"); card.classList.remove("err"); list.innerHTML = "";
+      setChip("대기", false);
+      return;
+    }
+    idle.style.display = "none"; feed.style.display = "";
+    var v = VIEWS[view];
+    head.textContent = v.head;
+    list.innerHTML = v.items.map(function(it){ return rowHTML(it[0], it[1]); }).join("");
+    var blocked = (view === "in") && !handled["in:"+ERRKEY];
+    card.classList.toggle("err", blocked);
+    lock.classList.toggle("show", blocked);
+    setChip(blocked ? "차단됨" : (view === "in" ? "해제됨 · 작업 가능" : "퇴근 점검 완료"), blocked);
+  }
+
+  function handle(k, act){
+    if (!T[k] || handled[view+":"+k]) return;
+    var t = T[k], now = new Date();
+    if (act === "작업 시작"){
+      handled[view+":"+k] = { mode:"status", title:"시작 처리됨", prevStatus:t.status, newStatus:"In Progress", at:stampT(now) };
+      t.status = "In Progress";
+    } else if (act === "작업 완료"){
+      handled[view+":"+k] = { mode:"status", title:"완료 처리됨", prevStatus:t.status, newStatus:"Done", at:stampT(now) };
+      t.status = "Done";
+    } else {
+      var nd = nextBiz(now);
+      handled[view+":"+k] = { mode:"date", title: act === "날짜 변경" ? "날짜 변경됨" : "지연 처리됨",
+                     prevDue: fmt(t.due), newDue: fmt(nd), at: stampT(now) };
+      t.due = nd;
+    }
+    render();
+  }
+
+  list.addEventListener("click", function(e){
+    var el = e.target, b = null;
+    while (el && el !== list){ if (el.getAttribute && el.getAttribute("data-act")){ b = el; break; } el = el.parentNode; }
+    if (!b || b.disabled) return;
+    handle(b.getAttribute("data-key"), b.getAttribute("data-act"));
+  });
+
+  [].slice.call(lock.querySelectorAll("[data-clear]")).forEach(function(b){
+    b.addEventListener("click", function(){
+      handle(ERRKEY, b.getAttribute("data-clear") === "done" ? "작업 완료" : "기한 연장");
+    });
+  });
+
+  var penWrap = document.getElementById("penWrap");
+  function penDone(){ if (penWrap) penWrap.classList.add("tried"); }
+  var inBtn = document.getElementById("inBtn");
+  if (inBtn) inBtn.addEventListener("click", function(){ penDone(); view = "in"; render(); });
+  var outBtn = document.getElementById("outBtn");
+  if (outBtn) outBtn.addEventListener("click", function(){ penDone(); view = "out"; render(); });
+  var resetBtn = document.getElementById("resetBtn");
+  if (resetBtn) resetBtn.addEventListener("click", function(){ resetState(); render(); });
+
+  render();
+
+  /* ---- WD simulator ---- */
+  var hd = document.getElementById("head");
+  if (hd){
+    var PER = { 1:90, 2:60, 3:50 };   // 1인당 산출(WD)
+    var PER_MAX = 90, TOT_MAX = 150;
+    var hv = document.getElementById("hv"),
+        pp = document.getElementById("pp"),
+        tot = document.getElementById("tot"),
+        ppVal = document.getElementById("ppVal"),
+        totVal = document.getElementById("totVal"),
+        ppBar = document.getElementById("ppBar"),
+        totBar = document.getElementById("totBar"),
+        verdict = document.getElementById("verdict");
+
+    var SAY = {
+      1: "1인당 산출은 90WD로 가장 높습니다. MD 기준만 놓고 보면 1인 체제가 가장 효율적이지만, 총 산출이 90WD에 그쳐 출시 일정에 필요한 물량을 채우지 못합니다.",
+      2: "채택한 안입니다. 1인당 60WD로 효율 손실이 크지 않으면서 총 120WD를 확보해, 출시 일정에 필요한 물량과 효율이 함께 성립하는 지점이었습니다.",
+      3: "실제 운영 중이던 구성입니다. 총 150WD로 물량은 가장 많지만 1인당 산출이 50WD까지 떨어집니다. 늘어난 1명이 만드는 이득보다 효율 손실이 커, 그 1명을 다른 필요 지점에 배치하는 편이 낫다고 판단했습니다."
+    };
+
+    function sim(){
+      var n = parseInt(hd.value, 10);
+      var per = PER[n], total = per * n;
+      hv.textContent = n;
+      pp.textContent = per;
+      tot.textContent = total;
+      ppVal.textContent = per;
+      totVal.textContent = total;
+      ppBar.style.width = (per / PER_MAX * 100) + "%";
+      totBar.style.width = (total / TOT_MAX * 100) + "%";
+      verdict.textContent = SAY[n];
+    }
+    hd.addEventListener("input", sim);
+    sim();
+  }
+
+  /* ---- 01 단계 탭 (Before → 문제 분석 → 조치) ---- */
+  var baBtns = [].slice.call(document.querySelectorAll("[data-ba]"));
+  baBtns.forEach(function(b){
+    b.addEventListener("click", function(){
+      baBtns.forEach(function(x){
+        var on = x === b;
+        x.classList.toggle("on", on);
+        x.setAttribute("aria-selected", on ? "true" : "false");
+        var pane = document.getElementById("ba-" + x.getAttribute("data-ba"));
+        if (pane) pane.classList.toggle("on", on);
+      });
+    });
+  });
+
+  /* ---- 인쇄 시 접힌 내용 모두 펼치기 ---- */
+  window.addEventListener("beforeprint", function(){
+    [].slice.call(document.querySelectorAll("details.more")).forEach(function(d){ d.setAttribute("open", ""); });
+  });
+
+  /* ---- 02 · 당시 흐름에서 짚은 두 곳 ---- */
+  var ff = document.getElementById("ff");
+  if (ff){
+    var ffMsg = document.getElementById("ffMsg");
+
+    [].slice.call(ff.querySelectorAll("[data-ffv]")).forEach(function(b){
+      b.addEventListener("click", function(){
+        var v = b.getAttribute("data-ffv");
+        [].slice.call(ff.querySelectorAll("[data-ffv]")).forEach(function(x){
+          var on = x === b;
+          x.classList.toggle("on", on);
+          x.setAttribute("aria-selected", on ? "true" : "false");
+        });
+        document.getElementById("ffBefore").classList.toggle("on", v === "before");
+        document.getElementById("ffAfter").classList.toggle("on", v === "after");
+      });
+    });
+
+    var ffSteps = [].slice.call(ff.querySelectorAll("#ffBefore button.ff-step"));
+    ffSteps.forEach(function(st){
+      st.addEventListener("click", function(){
+        ffSteps.forEach(function(x){ x.classList.toggle("is-sel", x === st); });
+        var isCause = st.classList.contains("is-bad");
+        while (ffMsg.firstChild) ffMsg.removeChild(ffMsg.firstChild);
+        var tag = document.createElement("span");
+        tag.className = "tag";
+        tag.textContent = st.getAttribute("data-tag");
+        var body = document.createElement("span");
+        st.getAttribute("data-msg").split("\n").forEach(function(line, i){
+          if (i) body.appendChild(document.createElement("br"));
+          body.appendChild(document.createTextNode(line));
+        });
+        ffMsg.appendChild(tag);
+        ffMsg.appendChild(body);
+        ffMsg.className = "ff-msg" + (isCause ? " bad" : "");
+      });
+    });
+  }
+
+  /* ---- 03 · 세 가지 결정으로 출시일 맞추기 (수치는 예시) ---- */
+  var ls = document.getElementById("ls");
+  if (ls){
+    var SCALE = 140;                          // 막대 최대 = 출시일의 140%
+    var BASE = { mon:138, lvl:92, pc:74 };    // 출시일 대비 %
+    var NAMES = { mon:"몬스터", lvl:"레벨", pc:"PC" };
+    var LEV = {
+      out:  { d:{ mon:-24 },
+              why:"등급이 낮은 몬스터는 외주를 제안했습니다.\n외주 플래닝까지 직접 진행해 수량과 기간을 확정하고,\n선행 부서별 전달 일정을 역산해 데드라인을 픽스했습니다." },
+      move: { d:{ mon:-8, pc:14 },
+              why:"출시 스케줄 대비 PC 쪽은 일정에 여유가 있었습니다.\n기존 PC 이펙터 3명을 2명으로 변경하고,\n여유 인력을 몬스터로 전환하면 효율적 운영이 가능함을 시뮬레이션했습니다." },
+      hire: { d:{ mon:-10 },
+              why:"이 계산을 근거로 애니·기획 직군 증원이 결정되었습니다." }
+    };
+    var DEFAULT_WHY = "";
+    var onLv = {};
+    var lsStatus = document.getElementById("lsStatus"),
+        lsWhy = document.getElementById("lsWhy");
+
+    function lsRender(){
+      var v = { mon:BASE.mon, lvl:BASE.lvl, pc:BASE.pc };
+      Object.keys(onLv).forEach(function(k){
+        if (!onLv[k]) return;
+        var d = LEV[k].d;
+        Object.keys(d).forEach(function(x){ v[x] += d[x]; });
+      });
+      var worst = null;
+      [].slice.call(ls.querySelectorAll(".ls-row[data-k]")).forEach(function(r){
+        var k = r.getAttribute("data-k"), val = v[k], over = val > 100;
+        var f = r.querySelector(".ls-fill");
+        f.style.width = Math.min(val / SCALE * 100, 100) + "%";
+        f.classList.toggle("over", over);
+        var t = r.querySelector(".ls-val");
+        t.textContent = val + "%";
+        t.classList.toggle("over", over);
+        if (over && (worst === null || val > v[worst])) worst = k;
+      });
+      if (worst !== null){
+        lsStatus.textContent = NAMES[worst] + " 일정이 출시일 대비 " + (v[worst] - 100) + "% 초과";
+        lsStatus.className = "ls-status over";
+      } else {
+        lsStatus.textContent = "모든 영역이 출시일 안에 들어왔습니다";
+        lsStatus.className = "ls-status ok";
+      }
+    }
+
+    [].slice.call(ls.querySelectorAll(".lever")).forEach(function(b){
+      b.addEventListener("click", function(){
+        var k = b.getAttribute("data-lv");
+        onLv[k] = !onLv[k];
+        b.setAttribute("aria-pressed", onLv[k] ? "true" : "false");
+        var whyText = onLv[k] ? LEV[k].why : DEFAULT_WHY;
+        while (lsWhy.firstChild) lsWhy.removeChild(lsWhy.firstChild);
+        whyText.split("\n").forEach(function(line, i){
+          if (!line) return;
+          if (i) lsWhy.appendChild(document.createElement("br"));
+          lsWhy.appendChild(document.createTextNode(line));
+        });
+        lsRender();
+      });
+    });
+    lsRender();
+  }
+
+
+  /* ---- 다음 단계 넘김 버튼 ---- */
+  [].slice.call(document.querySelectorAll(".nextcta[data-target]")).forEach(function(cta){
+    cta.addEventListener("click", function(){
+      var tab = document.querySelector(cta.getAttribute("data-target"));
+      var row = document.querySelector('[data-reveal="' + cta.getAttribute("data-go") + '"]');
+      if (!tab) return;
+      tab.click();
+      if (row) row.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
